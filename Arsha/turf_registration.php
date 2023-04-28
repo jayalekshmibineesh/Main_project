@@ -1,14 +1,14 @@
 <?php
+session_start();
 include 'connection.php';
 if(isset($_POST['submit']))
 {
   $turfname=$_POST['turf_name'];
   $turfplace=$_POST['place'];
   $amount=$_POST['amount'];
+  $id1=$_SESSION['id'];
   
-  $paymentid=$_POST['payment'];
-  
-  $pic=$_FILES['f1']['name'];
+   $pic=$_FILES['f1']['name'];
   if($pic!="")
   {
 
@@ -16,22 +16,18 @@ if(isset($_POST['submit']))
     $file1=rand();
     $file_ext=$filearray["extension"];
     $filenew=$file1.".".$file_ext;
-  
-    
-    move_uploaded_file($_FILES['f1']['tmp_name'],"images/".$filenew);
-
-
+   move_uploaded_file($_FILES['f1']['tmp_name'],"images/".$filenew);
   }
   else
   {
      echo"<script> alert('try again please')</script>";
   }
  
-  $sql=mysqli_query($con,"INSERT INTO turf(Turf_name,Turf_place, Image,Amount,Payment_id) VALUES('$turfname','$turfplace','$filenew','$amount','$paymentid')");
-  
- 
-  if($sql)
+  $sql=mysqli_query($con,"INSERT INTO turf(Turf_name,Turf_place,Image,Amount,Owner_id) VALUES('$turfname','$turfplace','$filenew','$amount','$id1')");
+   if($sql)
   {
+  
+    header('location:turf_registration.php');
    echo'<script> alert("Reistered Succesfully");</script>';
    //mysql1_close($con);
    
@@ -115,13 +111,13 @@ if(isset($_POST['submit']))
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="#">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="Ownerturf_view.php"> Turf</a></li>
+         >
           <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
           
-          <li><a class="nav-link scrollto" href="#login">Login</a></li>
+          <li><a class="nav-link scrollto" href="login.php">Login</a></li>
 
-          <li><a class="nav-link scrollto" href="#contact">Register</a></li> 
+          
           <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -152,8 +148,8 @@ if(isset($_POST['submit']))
                                 <span style="color: red;" id="sp3"></span>
                             
                           
-                                <input type="text"id="address" class="form-control mt-2" placeholder="payment*" value="" name="payment" onkeyup="clearmsg('sp4')"  style="width:350px;">
-                                <span style="color: red;" id="sp4"></span>
+                                
+                                
                             
                                 <input type="file"id="address" class="form-control mt-2" placeholder="payment*" value="" name="f1" onkeyup="clearmsg('sp4')"  style="width:350px;">
                             

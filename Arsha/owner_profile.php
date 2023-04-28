@@ -62,7 +62,7 @@ $result=mysqli_query($con,$data);
           <li><a class="nav-link scrollto" href="#about">edit  profile</a></li>
           <li><a class="nav-link scrollto" href="#services"></a></li>
           <li><a class="nav-link   scrollto" href="#portfolio">change password</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <!-- <li><a class="nav-link scrollto" href="">bookings_View</a></li> -->
                      
               
           <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->

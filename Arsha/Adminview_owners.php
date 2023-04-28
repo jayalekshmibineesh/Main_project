@@ -75,7 +75,7 @@ tr,th,td{
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
           
-          <li><a class="nav-link scrollto" href="#login">Login</a></li>
+          <li><a class="nav-link scrollto" href="logout.php">logout</a></li>
 
           <li><a class="nav-link scrollto" href="#contact">Register</a></li> 
           <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->

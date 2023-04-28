@@ -77,7 +77,7 @@ include 'connection.php';
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>-->
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li> 
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li>  -->
           <li><a class="getstarted scrollto" href="customer__registration.php">Register</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -95,7 +95,7 @@ include 'connection.php';
           <h1>Better Solutions For Your Entertainment Dream</h1>
           <h2>We offer  the best turfs in Kerala</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">login</a>
+            <a href="login.php" class="btn-get-started scrollto">login</a>
             <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
           </div>
         </div>
@@ -109,40 +109,7 @@ include 'connection.php';
 
   <main id="main">
 
-    <!-- ======= Clients Section ======= -->
-    <!-- <section id="clients" class="clients section-bg">
-      <div class="container">
-
-        <div class="row" data-aos="zoom-in">
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
-
-        </div>
-
-      </div>
-    </section>End Cliens Section -->
+                        
 
     <!-- == ===== About Us Section ======= -->
     <section id="about" class="about">
@@ -159,14 +126,14 @@ include 'connection.php';
             <ul>
               <li><i class="ri-check-double-line"></i> Our system provides the best services</li>
               <li><i class="ri-check-double-line"></i> Can book the turfs easily</li>
-              <!-- <li><i class="ri-check-double-line"></i> Persons from any age group can book turfs</li> -->
+              <li><i class="ri-check-double-line"></i> Persons from any age group can book turfs</li>
             </ul>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              <!-- Artificial turf is a surface of synthetic fibers made to look like natural grass, used in sports arenas, residential lawns and commercial applications that formerly used grass. It is durable and easily maintained without irrigation or trimming. Covered stadiums may require it, lacking sunlight for photosynthesis. Downsides include periodic cleaning requirements and heightened health concerns about the petroleum and toxic chemicals used to make it. -->
+              Artificial turf is a surface of synthetic fibers made to look like natural grass, used in sports arenas, residential lawns and commercial applications that formerly used grass. It is durable and easily maintained without irrigation or trimming. Covered stadiums may require it, lacking sunlight for photosynthesis. Downsides include periodic cleaning requirements and heightened health concerns about the petroleum and toxic chemicals used to make it. -->
 
-<!-- Artificial turf first gained substantial attention in 1966, when ChemgGrass was installed in the year-old Astrodome, developed by Monsanto and rebranded as AstroTurf, now a generic trademark (registered to a new owner) for any artificial turf.-->
+ Artificial turf first gained substantial attention in 1966, when ChemgGrass was installed in the year-old Astrodome, developed by Monsanto and rebranded as AstroTurf, now a generic trademark (registered to a new owner) for any artificial turf.
 Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football normally means the form of football that is the most popular where the word is used. Sports commonly called football include association football (known as soccer in North America, Ireland and Australia); gridiron football (specifically American football or Canadian football); Australian rules football; rugby union and rugby league; and Gaelic football.[1] These various forms of football share to varying extents common origins and are known as "football codes
             </p> 
             <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
@@ -186,9 +153,9 @@ Football is a family of team sports that involve, to varying degrees, kicking a 
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
             <div class="content">
-              <!-- <h3>we vitalize   <strong>the health and life style by transforming the playing habit of our community</strong></h3> -->
+              <h3>we vitalize   <strong>the health and life style by transforming the playing habit of our community</strong></h3>
               <p>
-                <!-- We seek to bring a qualitative shift in the fitness and well being of kozhikode -->
+                We seek to bring a qualitative shift in the fitness and well being of kozhikode
                 we try to bring a healthy sports habits in life
               </p>
             </div>
@@ -199,7 +166,7 @@ Football is a family of team sports that involve, to varying degrees, kicking a 
                   <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Make sports eaier to access <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
-                     <!-- Make it easier for everyone to play sports and increase the utilisation of facilities as a result. -->
+                     Make it easier for everyone to play sports and increase the utilisation of facilities as a result.
 
 
                     </p>
@@ -210,8 +177,8 @@ Football is a family of team sports that involve, to varying degrees, kicking a 
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Roll of sports in community <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                    <!-- Sports play a pivotal role in bringing people together, sharing moments and enhancing the well-being are reasons that form the essence of PlaySpots. -->
-                    sports has an important role in human life
+                    Sports play a pivotal role in bringing people together, sharing moments and enhancing the well-being are reasons that form the essence of PlaySpots.
+                    
                     </p>
                   </div>
                 </li>
@@ -235,58 +202,7 @@ Football is a family of team sports that involve, to varying degrees, kicking a 
 
       </div>
     </section><!-- End Why Us Section --> 
-    <!-- ======= Skills Section ======= -->
-    <!-- <section id="skills" class="skills">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-            <img src="assets/img/skills.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-
-            <div class="skills-content">
-
-              <div class="progress">
-                <span class="skill">HTML <i class="val">100%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">CSS <i class="val">90%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">JavaScript <i class="val">75%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">Photoshop <i class="val">55%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>End Skills Section  -->
+       
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
@@ -303,7 +219,7 @@ Football is a family of team sports that involve, to varying degrees, kicking a 
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4><a href="">Website avilability</a></h4>
               <p>Our website will be easily avialabe
-                <!-- // even if there is heavy traffic </p> -->
+                 even if there is heavy traffic </p>
             </div>
           </div>
 
@@ -312,7 +228,7 @@ Football is a family of team sports that involve, to varying degrees, kicking a 
               <div class="icon"><i class="bi bi-bandaid-fill"></i></div>
               <h4><a href="">First-aid Facility</a></h4>
               <p>We provide first-aid facility 
-                <!-- including nursing stations</p> -->
+                including nursing stations</p>
             </div>
           </div>
 
@@ -320,8 +236,8 @@ Football is a family of team sports that involve, to varying degrees, kicking a 
             <div class="icon-box">
               <div class="icon"><i class="bi bi-watch"></i></div>
               <h4><a href="">Punctality</a></h4>
-              <!-- <p>Games will start in the right timeslot alotted to you</p> -->
-                  turfs are punctual
+              <p>Games will start in the right timeslot alotted to you</p>
+                  
             </div>
           </div>
 

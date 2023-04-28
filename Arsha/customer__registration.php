@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+
 if(isset($_POST['submit']))
 {
   $customername=$_POST['customer_name'];
@@ -7,7 +8,7 @@ if(isset($_POST['submit']))
   $address=$_POST['address'];
   $gender=$_POST['gender'];
   $contact=$_POST['contact'];
-  $DOB=$_POST['dob'];
+  $dob=$_POST['dob'];
   $password=$_POST['password'];
   $unencrypted_password="$password";
   $hash=password_hash($unencrypted_password,PASSWORD_DEFAULT);
@@ -28,12 +29,12 @@ if(isset($_POST['submit']))
      echo"<script> alert('try again please')</script>";
   }
  
-  mysqli_query($con,"INSERT INTO customer_registration(Customer_name,Gender,Email,Address,Contact,DOB,approval_status,image) VALUES('$customername','$gender','$email','$address','$contact','$DOB', '0','$filenew')");
+  mysqli_query($con,"INSERT INTO customer_registration(Customer_name,Gender,Email,Address,Contact,DOB,approval_status,image) VALUES('$customername','$gender','$email','$address','$contact','$dob', '0','$filenew')");
   $log=mysqli_insert_id($con);
   $sql=mysqli_query($con,"INSERT INTO login(login_id,username,Password,type) VALUES('$log','$username','$hash','customer')");
   if($sql)
   {
-   echo'<script> alert("Reistered Succesfully");</script>';
+   echo'<script> alert("Registered Succesfully");</script>';
    //mysql1_close($con);
    
    ?>
@@ -116,13 +117,13 @@ if(isset($_POST['submit']))
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="#">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#">About</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
           <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
           
-          <li><a class="nav-link scrollto" href="#login">Login</a></li>
+          <li><a class="nav-link scrollto" href="login.php">Login</a></li>
 
-          <li><a class="nav-link scrollto" href="#contact">Register</a></li> 
+          <li><a class="nav-link scrollto" href="customer__registration.php">Register</a></li> 
           <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -142,9 +143,7 @@ if(isset($_POST['submit']))
                                
                                 <input type="text" id="c_name"class="form-control mt-1" placeholder="Your Name *" value="" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
                                 <span style="color: red;" id="sp1"></span>
-                                
-                          
-                            
+                                                                                     
                                 <input type="text"id="email" class="form-control mt-2" placeholder="Email *" value="" name="email" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
                                 <span style="color: red;" id="sp2"></span>
                             
@@ -157,7 +156,7 @@ if(isset($_POST['submit']))
                                 <span style="color: red;" id="sp4"></span>
                             
                             
-                                <input type="date"id="DOB" class="form-control mt-2" placeholder="Your Date of Birth" value="" name="dob"onkeyup="clearmsg('sp5')" style="width:350px;"> 
+                                <input type="date"id="dob" class="form-control mt-2" placeholder="Your Date of Birth" value="" name="dob"onkeyup="clearmsg('sp5')" style="width:350px;"> 
                                 <span style="color: red;" id="sp5"></span>
                           
                       
@@ -223,7 +222,7 @@ if(isset($_POST['submit']))
         var email=document.getElementById("email").value;
         var address=document.getElementById("address").value;
         var contact=document.getElementById("contact").value;
-        var DOB=document.getElementById("DOB").value;
+        var dob=document.getElementById("dob").value;
         var username=document.getElementById("username").value;
         var password=document.getElementById("password").value;
         var gender=document.getElementById("gender").value;
@@ -252,7 +251,7 @@ if(isset($_POST['submit']))
         return false;
 
       }     
-      if (DOB =="")
+      if (dob =="")
       {
       document.getElementById("sp5").innerHTML=" Enter your Date of birth";
       return false;
@@ -277,7 +276,7 @@ if(isset($_POST['submit']))
         document.getElementById("sp9").innerHTML="upload the image";
         return false;
        }
-       return true;
+        return true;
       }
        
       function clearmsg(sp)

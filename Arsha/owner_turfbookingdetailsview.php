@@ -1,76 +1,21 @@
- <?php
-
+<?php
 session_start();
 include 'connection.php';
-if(isset($_POST['submit']))// condition to check when the button is clicked
-{ 
-  $username=$_POST['username'];
-  $password=$_POST['password'];
- 
-  
-$data=mysqli_query($con,"SELECT * FROM `login` WHERE username='$username'");
-$row=mysqli_fetch_assoc($data);
-if($data)
+if(!isset($_SESSION['id']))
 {
-//$row=mysqli_fetch_assoc($data);//fetching  data to  $row
-$hash=password_verify($password,$row['password']);
-
-$count=mysqli_num_rows($data);
-$type=$row['type'];
-
-if($count==1 && $type=="admin" && $hash==$password)
-{
-  
- $_SESSION['id']=$row['login_id'];
- 
- $id=$row['login_id'];
- 
-  header("location:adminhome.php");
- }
-elseif($count==1 && $type=="customer" && $hash==$password)
- {
-  $_SESSION['id']=$row['login_id'];
-  $id=$_SESSION['id'];
-  $qua=mysqli_query($con,"SELECT `approval_status` FROM `customer_registration`WHERE Customer_id ='$id'");
-  $row1=mysqli_fetch_assoc($qua);
- if ($row1['approval_status']==1)
- {
- 
-  header("location:customer_home.php");
- }
- else
- {
-  echo "You Need Admin Approval";
- }
- 
-}
-elseif($count==1 && $type=="owner" && $hash==$password)
- {
-  $_SESSION['id']=$row['login_id'];
-  
-  $id=$_SESSION['id'];
-  
-  $qua=mysqli_query($con,"SELECT `approval_status` FROM `owner_registration`WHERE Owner_id ='$id'");
-  $row1=mysqli_fetch_assoc($qua);
- if ($row1['approval_status']==1)
- {
- 
-  header("location:owner_home.php");
- }
- else
- {
-  echo "You Need Admin Approval";
- }
+    header('location:login.php');
 }
 else
 {
-echo "invalid id or password";
 
-}
-}
+$id1=$_SESSION['id'];
 
-}
-?>
+$sql=mysqli_query($con,"SELECT bookturf.Booking_id,bookturf.From_Date,bookturf.To_Date,turf.Turf_name,customer_registration.Customer_name,customer_registration.Contact,payment.Amount,payment.Status FROM bookturf
+INNER JOIN `customer_registration`ON `bookturf`.`Customer_id`=`customer_registration`.`Customer_id`
+INNER JOIN turf on bookturf.Turf_id=turf.Turf_id 
+INNER JOIN payment on bookturf.Payment_id=payment.Payment_id WHERE Owner_id='$id1'");
+
+?>  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,8 +70,30 @@ echo "invalid id or password";
 
       <nav id="navbar" class="navbar">
         <ul>
-          
-          <li><a class="getstarted scrollto" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="logout.php">logout</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>-->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -137,52 +104,54 @@ echo "invalid id or password";
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card shadow-2-strong" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
-            <form action="" method="POST">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+         
+          <h2>Owner turf booking details view </h2>
+         <center><table class="table table-bordered">
+                    <tr>
+                       <th> Booking_id</th>
+                       <th>Turf_Name</th>
+                       <th>From_Date</th>
+                       <th>To_Date</th>
+                       <th>Customer_Name</th>
+                       <th>Customer_Contact</th>
+                       <th>Amount</th>
+                       <th>Payment_Status</th>
+                    </tr><?php
+                    while($row=mysqli_fetch_assoc($sql))
+                    {
+                   
+                    ?> 
+                    <tr>
+                        <td><?php echo $row['Booking_id'];?></td>
+                        <td> <?php echo $row['Turf_name'];?></td>
+                        <td> <?php echo $row['From_date'];?></td>
+                        <td> <?php echo $row['To_date'];?></td>
+                        <td> <?php echo $row['Customer_name'];?></td>
+                        <td> <?php echo $row['Contact'];?></td>
+                        <td> <?php echo $row['Amount'];?></td>
+                        <td> <?php echo $row['Status'];?></td>
 
-            <h3 class="mb-5">Sign in</h3>
-            <div class="form-outline mt-2 mb-2" >
-              <select name="type" id="button">
-                <option value="owner">&nbsp;Owner</option>
-                <option value="customer">&nbsp; customer</option>
-                <option value="admin"> &nbsp;admin</option>
-
-              </select>
-              </div>
-
-            <div class="form-outline mb-4">
-              <input type="email"name="username" class="form-control form-control-lg" />
-              <label class="form-label" for="typeEmailX-2" >Email</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="typePasswordX-2"  name="password" class="form-control form-control-lg" />
-              <label class="form-label" for="typePasswordX-2">Password</label>
-            </div>
+                    </tr>
+               <?php
+                   }
+                ?>
+                  
 
 
-            
-            <!-- Checkbox -->
-            
-            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Login</button>
-
-            <hr class="my-4">
-
-            <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color:skyblue; color:white;"
-              type="submit" ><a href="customer__registration.php">user registration</a></button>
-
-            <button class="btn btn-lg btn-block btn-secondary mb-2" style="background-color: skyblue;"
-              type="submit"><a href="owners  _reg.php"></i>Owner registration</a></button>
-              </form>
+                 </table>
+        </center> 
+         
           </div>
+        </div>
+        
+         
         </div>
       </div>
     </div>
-  </div>
+
   </section><!-- End Hero -->
 
   <main id="main">
@@ -251,30 +220,7 @@ echo "invalid id or password";
 
 </html>
 
+<?php
+}
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <style>
-    
-    #button{
-       padding:10px;
-       border-radius:10px;
-       background-color:skyblue;
-    }
-    </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-  </head>
-    <title>Document</title>
-</head>
-<body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-<section class="vh-100" style="background-color: #508bfc;">
-  
-</section>
-  </body>
-  </html>
+?>

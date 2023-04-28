@@ -1,4 +1,5 @@
 <?php
+
 include 'connection.php';
 if(isset($_POST['submit']))
 {
@@ -6,12 +7,9 @@ if(isset($_POST['submit']))
   $address=$_POST['address'];
   $email=$_POST['email'];
   $contact=$_POST['contact'];
-  
-  //to insert into login table
-  $password=$_POST['password'];
-  $unencrypted_password="$password";
-  $hash=password_hash($unencrypted_password,PASSWORD_DEFAULT);
-  $username=$_POST['email'];
+  $password = $_POST['password'];
+  $hash=password_hash($password,PASSWORD_DEFAULT);
+  $username=$_POST['username'];
   $pic=$_FILES['f1']['name'];
   if($pic!="")
   {
@@ -29,12 +27,12 @@ if(isset($_POST['submit']))
      echo"<script> alert('try again please')</script>";
   }
   mysqli_query($con,"INSERT INTO `owner_registration`( `Owner_name`, `Address`, `Email`, `Contact`,`approval_status`,`Image`) VALUES ('$ownername','$address','$email','$contact','0','$filenew')");
-  $log=mysqli_insert_id($con);
-  mysqli_query($con,"INSERT INTO `login`(`login_id`, `username`, `Password` ,`type`) VALUES ('$log','$username','$hash','owner')");
-//  if($sql)
-//  {
-//   echo'<script> alert("Reistered Succesfully")</script>';
-//  }
+  $log = mysqli_insert_id($con);
+  $sql=mysqli_query($con,"INSERT INTO login(login_id,username,password,type) VALUES('$log','$username','$hash','owner')");
+ if($sql)
+ {
+  echo'<script> alert("Registered Succesfully")</script>';
+ }
  
 }
 
@@ -111,8 +109,8 @@ if(isset($_POST['submit']))
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="#">About</a></li>
-          <li><a class="nav-link scrollto" href="#login">Login</a></li>
+          <li><a class="nav-link scrollto" href="#"></a></li>
+          <li><a class="nav-link scrollto" href="login.php">Login</a></li>
 
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li> 
           <li><a class="nav-link scrollto" href="#c_reg.php">Register</a></li>
@@ -161,7 +159,7 @@ if(isset($_POST['submit']))
                                 
                       
                       
-                                <input type="text"id="username" class="form-control mt-2" placeholder="Your username" value="" name="email"onkeyup="clearmsg('sp6')"  style="width:350px;"> 
+                                <input type="text" id="username" class="form-control mt-2" placeholder="Your username" value="" name="username" onkeyup="clearmsg('sp6')"  style="width:350px;"> 
                                 <span style="color:red;" id="sp6"></span>
                         
                         

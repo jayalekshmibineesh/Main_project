@@ -51,6 +51,7 @@ $result=mysqli_query($con,$data);
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM </a></h1>
+     <center> <h3><span> Customer profile</span></h3></center>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -60,10 +61,10 @@ $result=mysqli_query($con,$data);
           <li><a class="nav-link scrollto" href="#"></a></li>
           <li><a class="nav-link scrollto" href="customerprofile_edit.php">Edit profile</a></li>
           <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
-          
+          <li><a class="nav-link scrollto" href="customer_home.php">Customerhome</a></li>
           <li><a class="nav-link scrollto" href="login.php">Login</a></li>
 
-          <li><a class="nav-link scrollto" href="#contact">Register</a></li> 
+          <li><a class="nav-link scrollto" href="customer__registration.php">Register</a></li> 
           <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -77,17 +78,19 @@ $result=mysqli_query($con,$data);
 <body>
   <!-- <section > -->
     <div  class ="container">
-      <form method=POST>
-        <div class= "card">
+      <center>
+    <!-- <div class= "card" style="width:30%;background-color:pink;"> -->
+    <form method=POST>
+        
             <?php
         if(mysqli_num_rows($result)>0)
 {
  while($row=mysqli_fetch_assoc($result))
  { 
   ?>
-  <div class="card" style="width=25%">
+  <div class="card" style="width:25%; background-color:pink;">
   <div class="form-group mt-1">
-  <img src="./images/<?php echo $row['image'];?>" height="50" width="50" alt="image not found">
+  <img src="./images/<?php echo $row['image'];?>" height="150" width="150" alt="image not found">
       
     </div>
   <div class="form-group mt-4">

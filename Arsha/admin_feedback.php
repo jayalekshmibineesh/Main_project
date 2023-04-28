@@ -1,19 +1,8 @@
 <?php
 session_start();
 include 'connection.php';
-// if(!isset($_SESSION['id']))
-// {
-//     header('location:login.php');
-// }
-// else
-// {
-$sql=mysqli_query($con,"SELECT * FROM  turf");
-
-
-
+$data=mysqli_query($con,"SELECT * FROM `feedback`");
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,18 +15,7 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
   <meta content="" name="description">
   <meta content="" name="keywords">
 <style>
-   <style>
-  .card
-  {
-    display:inline-block;
-    width:15%;
-    display: flex;
-    justify-content:space-between;
-    margin-left: 50px;
-  }
-  
-  </style>
- 
+    
    
 </style>
   <!-- Favicons -->
@@ -81,13 +59,10 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
-          <li><a class="nav-link scrollto" href="customer_profile.php">Back</a></li>
           
+          <li><a class="nav-link scrollto" href="#adminhome.php">Admin home</a></li>
+          <li><a class="nav-link   scrollto" href="logout.php">logout</a></li>
           
-          
-          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -101,53 +76,42 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-         
-          <!-- <h2>We are team of talented designers making websites with Bootstrap</h2> -->
-          <!-- <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
-             -->
-          </div>
+         <div class="card">
+            <table>
+                <tr>
+                    <th>Feedback_id</th>
+                    <th>Message</th>
+                    <th>Customer_id</th>
+                    <th>Date</th>
+               </tr>
+               
+                <?php
+                while($row=mysqli_fetch_assoc($data))
+                {
+                 ?> 
+                 <tr>
+                  <td> <?php echo $row['Feed_id'];?></td>
+                  <td> <?php echo $row['Message'];?></td> 
+                  <td> <?php echo $row['Customer_id'];?></td>
+                  <td> <?php echo $row['Date'];?></td>
+                </tr>
+                <?php
+                }
+            ?>
+            </table>
+         </div>
+          
+        </div>
         </div>
         
          
         </div>
-       </div>
+      </div>
     </div>
 
   </section><!-- End Hero -->
 
   <main id="main">
-    <section>
-     <div class="container">
-     <?php
-      while($row=mysqli_fetch_assoc($sql))
-      {
-      ?> <center>
-       <div class="card" style="width:30%;margin-left:80px" >
-         <div class="form-group mt-4"> 
- <!-- <img src="./images/<?php echo $row['image'];?>" height="50" width="50" alt="image not found"> -->
-              <?php echo'<img src="./images/'.$row["Image"].'" height="400px" width="400px">';?> 
-        </div> 
-        <div class="form-group mt-4">
-            <?php echo "Turf_id: " .$row['Turf_id'];?>
-        </div>
-        <div class="form-group mt-4">
-            <?php echo "Turf_name: " .$row['Turf_name'];?>
-        </div>
-        <div class="form-group mt-4">
-            <?php echo "Turf_place: " .$row['Turf_place'];?>
-        </div>
-        <div class="form-group mt-4">
-            <button class="btn"name="submit" style="background-color: blue; padding-left: 25px;">Book Now</button>
-        </div>
-      </div>
-      </center>
-      </div>
-      <?php
-     }
-      ?>      
-      </div>
-    </section>
 
        
     <!-- ======= About Us Section ======= -->
@@ -213,6 +177,5 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
 
 </html>
 
-<?php
-//}
-//?>
+
+

@@ -59,6 +59,8 @@ include 'connection.php';
           <li><a class="nav-link   scrollto" href="Ownerturf_view.php">viewturf</a></li>
           <li><a class="nav-link scrollto" href="changepassword.php">change password</a></li>
           <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
+          <li><a class="nav-link scrollto" href="owner_turfbookingdetailsview.php">View_bookings</a></li>
+
 
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

@@ -55,13 +55,12 @@ include 'connection.php';
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          
-          <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
+          <li><a class="nav-link scrollto" href="feedback.php">Feedback</a></li>
+          <li><a class="nav-link   scrollto" href="customer_notification.php">notifications</a></li>
           <li><a class="nav-link scrollto" href="customer__registration.php">register</a></li>
           <li><a class="nav-link scrollto" href="logout.php">logout</a></li>
-
           <li><a class="nav-link scrollto" href="customer_profile.php">pofile</a></li> 
-          <li><a class="getstarted scrollto" href="custturif_view.php">viewturf</a></li>
+          <li><a class="getstarted scrollto" href="customer_turfview.php">viewturf</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -213,7 +212,7 @@ Artificial turf first gained substantial attention in 1966, when ChemgGrass was 
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-newsletter">
+    <!-- <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
@@ -278,11 +277,11 @@ Artificial turf first gained substantial attention in 1966, when ChemgGrass was 
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Futura Labs</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
