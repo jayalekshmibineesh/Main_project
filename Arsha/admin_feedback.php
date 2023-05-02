@@ -11,7 +11,7 @@ $data=mysqli_query($con,"SELECT * FROM `feedback`");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>COMMON TEMPLATE</title>
+  <title>TURF MANAGEMENT SYSTEM</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 <style>
@@ -60,7 +60,7 @@ $data=mysqli_query($con,"SELECT * FROM `feedback`");
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           
-          <li><a class="nav-link scrollto" href="#adminhome.php">Admin home</a></li>
+          <li><a class="nav-link scrollto" href="adminhome.php">Admin home</a></li>
           <li><a class="nav-link   scrollto" href="logout.php">logout</a></li>
           
         </ul>

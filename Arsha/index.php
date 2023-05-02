@@ -79,6 +79,7 @@ include 'connection.php';
           </li>-->
           <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li>  -->
           <li><a class="getstarted scrollto" href="customer__registration.php">Register</a></li>
+          <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

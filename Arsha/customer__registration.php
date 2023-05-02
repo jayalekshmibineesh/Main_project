@@ -6,7 +6,7 @@ if(isset($_POST['submit']))
   $customername=$_POST['customer_name'];
   $email=$_POST['email'];
   $address=$_POST['address'];
-  $gender=$_POST['gender'];
+ // $gender=$_POST['gender'];
   $contact=$_POST['contact'];
   $dob=$_POST['dob'];
   $password=$_POST['password'];
@@ -29,12 +29,14 @@ if(isset($_POST['submit']))
      echo"<script> alert('try again please')</script>";
   }
  
-  mysqli_query($con,"INSERT INTO customer_registration(Customer_name,Gender,Email,Address,Contact,DOB,approval_status,image) VALUES('$customername','$gender','$email','$address','$contact','$dob', '0','$filenew')");
+  mysqli_query($con,"INSERT INTO customer_registration(Customer_name,Email,Address,Contact,DOB,approval_status,image) VALUES('$customername','$email','$address','$contact','$dob', '0','$filenew')");
   $log=mysqli_insert_id($con);
   $sql=mysqli_query($con,"INSERT INTO login(login_id,username,Password,type) VALUES('$log','$username','$hash','customer')");
   if($sql)
   {
    echo'<script> alert("Registered Succesfully");</script>';
+
+
    //mysql1_close($con);
    
    ?>
@@ -44,11 +46,11 @@ if(isset($_POST['submit']))
   }
  else
 {
-   echo "somethpng went wrong";
+   echo "something went wrong";
    
   }
 }
-
+ 
 ?>
 
 
@@ -117,12 +119,7 @@ if(isset($_POST['submit']))
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#">About</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
-          <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
-          
           <li><a class="nav-link scrollto" href="login.php">Login</a></li>
-
           <li><a class="nav-link scrollto" href="customer__registration.php">Register</a></li> 
           <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
         </ul>
@@ -135,73 +132,47 @@ if(isset($_POST['submit']))
   ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-right">
 
-    <div class="container">
-      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="300">
-      <form  action="" method="POST" enctype="multipart/form-data" required>  
-            <h2><center><span>CUSTOMER REGISTRATION</span></center></h2>          
-                            <div class="form-group">
-                               
-                                <input type="text" id="c_name"class="form-control mt-1" placeholder="Your Name *" value="" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
-                                <span style="color: red;" id="sp1"></span>
+  <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left" >
+   <div class="row">
+    <div class="col-mb-4"style="text-align:center;" >
+            <h3> <center><span>CUSTOMER REGISTRATION</span></center></h3>
+              <form  action="" method="POST" enctype="multipart/form-data"  required >  
+                    
+                       <div class="form-group">  
+                            <input type="text" id="c_name"class="form-control mt-2" placeholder="Your Name *" value="" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
+                             <span style="color: red;" id="sp1"></span>
                                                                                      
-                                <input type="text"id="email" class="form-control mt-2" placeholder="Email *" value="" name="email" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
+                                <input type="text"id="email" class="form-control mt-1" placeholder="Email *" value="" name="email" onkeyup="clearmsg('sp2')" style="width:350px;"> 
                                 <span style="color: red;" id="sp2"></span>
                             
                             
-                                <input type="text" id="contact" class="form-control mt-2" placeholder="Contact *" value="" name="contact"  onkeyup="clearmsg('sp3')"  style="width:350px;">
+                                <input type="text"id="contact" class="form-control mt-1" placeholder="contact *" value="" name="contact" onkeyup="clearmsg('sp3')"style="width:350px;"> 
                                 <span style="color: red;" id="sp3"></span>
-                            
+
                           
                                 <input type="text"id="address" class="form-control mt-2" placeholder="Your Address*" value="" name="address" onkeyup="clearmsg('sp4')"  style="width:350px;">
-                                <span style="color: red;" id="sp4"></span>
+                                <span style="color: red;" id="sp4"></span>                            
                             
-                            
-                                <input type="date"id="dob" class="form-control mt-2" placeholder="Your Date of Birth" value="" name="dob"onkeyup="clearmsg('sp5')" style="width:350px;"> 
+                                <input type="date"id="Dob" class="form-control mt-1" placeholder="Your Date of Birth" value="" name="dob"onkeyup="clearmsg('sp5')" style="width:350px;"> 
                                 <span style="color: red;" id="sp5"></span>
-                          
-                      
-                      
-                                <input type="text"id="username" class="form-control mt-2" placeholder="Your username" value="" name="email"onkeyup="clearmsg('sp6')"  style="width:350px;"> 
+                                             
+                                <input type="text"id="username" class="form-control mt-1" placeholder="Your username" value="" name="username"onkeyup="clearmsg('sp6')"  style="width:350px;"> 
                                 <span style="color:red;" id="sp6"></span>
-                        
-                        
-                            
-                                <input type="password" id="password"class="form-control mt-2" placeholder="Your Password *" value="" name="password" onkeyup="clearmsg('sp7')" style="width:350px;">
+                                                                           
+                                <input type="password" id="password"class="form-control mt-1" placeholder="Your Password *" value="" name="password" onkeyup="clearmsg('sp7')" style="width:350px;">
                                 <span style="color: red;" id="sp7"></span>
-                            
-                            
-                               <input type="radio" style="color:white" name="gender" id="gender" value='male' onkeyup="clearmsg('sp8')">male &nbsp&nbsp&nbsp&nbsp;
-                               <input type="radio" name="gender"  id="gender" value='female' onkeyup="clearmsg('sp8')">female  
-                                <span style="color: red;" id="sp8"></span><br>
-                                <input  type="file"  id="imge"name="f1" class="form-control mt-2 mb-2"placeholer="Upload your profilepic" >
+                                                        
+                               <input  type="file"  id="image"name="f1" class="form-control mt-2 mb-2"placeholder="Upload your profilepic" >
                                 <span style="color: red;" id="sp9"></span><br>
-                                <button name="submit" class="btn btn-primary" onclick="return validation();return false;">SUBMIT</button>
-                            
-                               
-                              </div>
-                              <br>
-                               <!-- <input type="submit" class="btn btn-primary" name="submit"  value="Submit">      -->
-                            
-                            </form>
-       </div>
-       
-       </div>
-       
-    </div>
 
-  </section>
-  <!-- <section id="customer_reg" class="contact">
-      <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left">
-       <div class="row">
-          <div class="col-mb-4">
-           
-                     </div>
-                        </div>
-                        </div>
-    
-   </section> -->
-   <!-- // End Contact Section -->
-
+                            <button class="btn btn-primary mb-2"  name="submit" onclick="return validation();">SUBMIT</button>                              
+                        </div>                                       
+                     </form>
+                   </div>
+                 </div>
+              </div>
+       </section>
+ 
                             
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -215,7 +186,62 @@ if(isset($_POST['submit']))
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
+    function validation()
+    {
+        var c_name=document.getElementById("c_name").value;
+        var email=document.getElementById("email").value;
+        var contact=document.getElementById("contact").value;
+        var address=document.getElementById("address").value;
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+        if (c_name=="")
+         {
+          document.getElementById("sp1").innerHTML="Enter your Name";
+           return false;
+         }
+          if (email=="")
+          {
+           document.getElementById("sp2").innerHTML="Enter email";
+           return false;
+           
+          }
+          if (contact=="")
+          {
+           document.getElementById("sp3").innerHTML="Enter contact";
+           return false;
+           
+          }
 
+          if (address=="")
+      {
+        document.getElementById("sp4").innerHTML="enter your address";
+        return false;
+
+      }     
+     
+       if ( username =="")
+       {
+        document.getElementById("sp6").innerHTML="Enter your username";
+        return false;
+       }
+       if ( password=="")
+       {
+        document.getElementById("sp7").innerHTML="Enter your Password";
+        return false;
+       }
+      
+       //return true;
+      }
+       
+      function clearmsg(sp)
+
+{  
+document.getElementById(sp).innerHTML="";
+}
+
+  </script>
+
+  <!-- <script>
     function validation()
     { 
         var c_name=document.getElementById("c_name").value;      
@@ -233,8 +259,6 @@ if(isset($_POST['submit']))
         document.getElementById("sp1").innerHTML="Enter your Name";
         return false;
       }
-            
-      
       if (email=="")
       {
         document.getElementById("sp2").innerHTML="Enter your email";
@@ -278,14 +302,13 @@ if(isset($_POST['submit']))
        }
         return true;
       }
-       
+    
       function clearmsg(sp)
+    {  
+        document.getElementById(sp).innerHTML="";
+    }
 
-{  
-document.getElementById(sp).innerHTML="";
-}
-
-</script> 
+</script>  -->
  <!-- ======= Footer ======= -->
   <br><footer id="footer">
 

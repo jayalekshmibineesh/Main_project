@@ -386,8 +386,12 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  /* background: #37517e; */
-  background-image: url('C:\Users\leksh\OneDrive\Pictures\turf8.jpg');
+  background: #37517e;
+  background-image: url(https://artificialgrassrecyclers.com/wp-content/uploads/2015/11/iStock_000017040341_Medium1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  
+
 }
 
 #hero .container {

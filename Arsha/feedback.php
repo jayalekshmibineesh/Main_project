@@ -94,20 +94,22 @@ else
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
         
-        <center><h2> FEEDBACK</h2></center><div class="card"style="width:50%">
+        <center><h2> SEND FEEDBACK</h2>
+        <div class="card"style="width: 500px;background-color:green;">
           
           <div class="form group mt-4">
-            <label for="">Message</label>
-             <input type="text" name="message"place holder="Enter your Message">
+            <!-- <label for="">Message</label> -->
+            <textarea name="message" id="" cols="20" rows="10" placeholder="type message here"></textarea>
           </div>
           <div class="form group mt-4">
             <label for="">Date</label>
-             <input type="date" name="date" value="date"place holder="Enter your Message">
+             <input type="date" name="date" value="date">
           </div>
          <center> <div class="form group mt-4">
-            <input class="btn btn-primary" type="submit" name="submit" value="submit">
+            <input class="btn btn-primary mb-3" type="submit" name="submit" value="submit">
           </div></center>
         </div>
+        </center>
       </div>
     </div>
     </form>       
@@ -115,37 +117,7 @@ else
      
   </section><!-- End Hero -->
 
-  <main id="main">
-
-       
-    <!-- ======= About Us Section ======= -->
-    
-    <!-- ======= Why Us Section ======= -->
-   
-    <!-- ======= Cta Section ======= -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio"> -->
-      <!-- <div class="container" data-aos="fade-up"> -->
-
-       
-    <!-- </section>End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
  
-
-    <!-- ======= Pricing Section ======= -->
-    
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-   
-
-    <!-- ======= Contact Section ======= -->
-  
-<!-- </section>End Contact Section -->
-
-  </main><!-- End #main -->
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container footer-bottom clearfix">

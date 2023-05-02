@@ -96,9 +96,6 @@ $result=mysqli_query($con,$data);
   <div class="form-group mt-4">
        <?php echo"Customer name :" .$row["Customer_name"]."<br>";?>
   </div>   
-  <div class="form-group mt-4">
-      <?php  echo "gender :" .$row["gender"]."<br>";?>
- </div>
  <div class="form-group mt-4">
    <?php echo "Email :" .$row["Email"]."<br>";?>
  </div>

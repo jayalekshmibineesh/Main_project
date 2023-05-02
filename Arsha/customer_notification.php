@@ -102,30 +102,23 @@ if(mysqli_num_rows($sql)>0)
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
+     <section id="hero" class="d-flex align-items-center">
   <div class="container">
-  <div class="row">
-       <center><span><h2>Notification</h2></span></center>
-      <div class="card" style="width:40%;">
-      <?php
-    while ($row = mysqli_fetch_assoc($sql))
-     {
-      ?>
-        
-        <?php echo $row['Notification']; ?>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card" style="width: 40%; margin: 0 auto;">
+          <div class="card-body">
+            <h2 class="card-title text-center"style="color:black;">Notification</h2>
+            <?php while ($row = mysqli_fetch_assoc($sql)) { ?>
+              <center><p class="card-text" style="color:red;"> <?php echo $row['Notification']; ?></p></center>
+            <?php } ?>
+          </div>
+        </div>
       </div>
-    <?php
-    }
-    ?>
+    </div>
   </div>
-</div>
-           
-            
-            
+</section>
 
-        
-     </section><!-- End Hero -->
 
 
   <main id="main">

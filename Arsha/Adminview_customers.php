@@ -38,23 +38,25 @@ $data=mysqli_query($con,"select * from customer_registration");
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <style>
-        table,tr,th,td
-        {
+             table,tr,th,td
+            {
             border:2px solid black;
-            /* border-collapse:collapse; */
-        }
-        th,tr,td{
-         color:white; 
-        }
+            border-collapse:collapse;
+            }
+              tr,th,td{
+                        color:white;
+                      }
+   
+        
 
             .btn1{
                 background-color:blue;
                 color:white;
-            }
+                 }
             .nova{
               padding-top:4cm;
               
-            }
+                }
             span{
               color:pink
             }
@@ -66,7 +68,7 @@ $data=mysqli_query($con,"select * from customer_registration");
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <!-- ======= Header ======= -->
-  <section id="hero">
+  <section id="hero" >
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
@@ -79,15 +81,16 @@ $data=mysqli_query($con,"select * from customer_registration");
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Feedbak</a></li>
           <li><a class="nav-link scrollto" href="#services">notification</a></li>
-          <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
-          <li><a class="nav-link scrollto" href="customer__registration.php">register</a></li>
+          <li><a class="nav-link   scrollto" href="#portfolio">search</a></li>
+           <li><a class="nav-link scrollto" href="customer__registration.php">register</a></li>
           <li><a class="nav-link scrollto" href="login.php">Login</a></li>
 
           
           <li><a class="nav-link scrollto" href="login.php">Logout</a></li> 
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        </ul> 
+        <i class="bi bi-list mobile-nav-toggle"></i> 
+               
       </nav><!-- .navbar -->
 
     </div>
@@ -102,68 +105,49 @@ $data=mysqli_query($con,"select * from customer_registration");
   <table>
         <tr>
             <th>CustomerName</th>
-            <th>Gender</th>
             <th>Email</th>
             <th>Address</th>
             <th>Contact</th>
             <th>DOB</th>
             <th>Image</th>
             <th >aprooval</th>
-            
-            
-            
         </tr>
-
         <?php
-        
-         while($row= mysqli_fetch_assoc($data))
-         {
+          while($row= mysqli_fetch_assoc($data))
+          {
         ?>
-       
-
          <tr>
           <td><?php echo $row['Customer_name'];?></td>
-          <td><?php echo $row['gender'];?></td>
           <td><?php echo $row['Email'] ;?></td>
           <td><?php echo $row['Address'];?></td>
           <td><?php echo $row['Contact'] ;?></td> 
           <td><?php echo $row ['DOB'];?></td>
-          <td><img src="./images/<?php echo $row['image'];?>" height="20" width="20" alt="image not found"></td>
-          
-          <td>
+          <td><img src="./images/<?php echo $row['image'];?>" height="50" width="50" alt="image not found"></td>
+        <td>
           <?php
           if($row['approval_status']==0)
           {
-            ?>        
+          ?>        
          <a class="btn btn-primary" href="updatecust_status.php?id=<?php echo $row['Customer_id'];?>">approve</a>
-<?php
-}
-elseif($row['approval_status']==1)
-{
-    ?>
-    <button class="btn btn-danger">approved</button>  
-    <?php
-}
-            
-?>
-</td>
+           <?php
+             }
+               elseif($row['approval_status']==1)
+                {
+            ?>
+          <button class="btn btn-danger">approved</button>  
+          <?php
+           }
+          ?>
+      </td>
 
-        </tr>
+    </tr>
          
       <?php
        }
        ?>
-
-   </table></center>
-      </div>
+    </table></center>
+  </div>
   </section><!-- End Hero -->
-  <main id="main">
-  <form method="post">
-    <br><br>
-  <</form>
-  
-  </main><!-- End #main --><!-- ======= Footer ======= -->
-    
   <footer id="footer">
    
     <div class="container footer-bottom clearfix">
@@ -192,12 +176,7 @@ elseif($row['approval_status']==1)
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  
-
-
-    
-    
+  <script src="assets/js/main.js"></script>    
 
 </body>
 

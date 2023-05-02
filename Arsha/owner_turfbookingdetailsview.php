@@ -27,7 +27,11 @@ INNER JOIN payment on bookturf.Payment_id=payment.Payment_id WHERE Owner_id='$id
   <meta content="" name="description">
   <meta content="" name="keywords">
 <style>
-    
+    td,th
+    {
+        color:white;    
+
+    }
    
 </style>
   <!-- Favicons -->
@@ -109,7 +113,7 @@ INNER JOIN payment on bookturf.Payment_id=payment.Payment_id WHERE Owner_id='$id
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
          
           <h2>Owner turf booking details view </h2>
-         <center><table class="table table-bordered">
+         <center><table  class="table table-bordered">
                     <tr>
                        <th> Booking_id</th>
                        <th>Turf_Name</th>
@@ -127,8 +131,8 @@ INNER JOIN payment on bookturf.Payment_id=payment.Payment_id WHERE Owner_id='$id
                     <tr>
                         <td><?php echo $row['Booking_id'];?></td>
                         <td> <?php echo $row['Turf_name'];?></td>
-                        <td> <?php echo $row['From_date'];?></td>
-                        <td> <?php echo $row['To_date'];?></td>
+                        <td> <?php echo $row['From_Date'];?></td>
+                        <td> <?php echo $row['To_Date'];?></td>
                         <td> <?php echo $row['Customer_name'];?></td>
                         <td> <?php echo $row['Contact'];?></td>
                         <td> <?php echo $row['Amount'];?></td>

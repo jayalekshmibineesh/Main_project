@@ -99,7 +99,7 @@ if(isset($_POST['submit']))
   </head>
 
 <body>
-
+ 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
@@ -140,18 +140,16 @@ if(isset($_POST['submit']))
                                 
                           
                             
-                                <input type="text"id="email" class="form-control mt-2" placeholder="place *" value="" name="place" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
+                                <input type="text"id="T_place" class="form-control mt-2" placeholder="place *" value="" name="place" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
                                 <span style="color: red;" id="sp2"></span>
                             
                             
-                                <input type="text" id="contact" class="form-control mt-2" placeholder="amount *" value="" name="amount"  onkeyup="clearmsg('sp3')"  style="width:350px;">
+                                <input type="text" id="amount" class="form-control mt-2" placeholder="amount *" value="" name="amount"  onkeyup="clearmsg('sp3')"  style="width:350px;">
                                 <span style="color: red;" id="sp3"></span>
-                            
-                          
-                                
+  
                                 
                             
-                                <input type="file"id="address" class="form-control mt-2" placeholder="payment*" value="" name="f1" onkeyup="clearmsg('sp4')"  style="width:350px;">
+                                <input type="file"id="payment" class="form-control mt-2" placeholder="payment*" value="" name="f1" onkeyup="clearmsg('sp4')"  style="width:350px;">
                             
                                 <button name="submit" class="btn btn-primary" onclick="return validation();return false;">SUBMIT</button>
                             
@@ -196,67 +194,32 @@ if(isset($_POST['submit']))
 
     function validation()
     { 
-        var c_name=document.getElementById("c_name").value;      
-        var email=document.getElementById("email").value;
-        var address=document.getElementById("address").value;
-        var contact=document.getElementById("contact").value;
-        var DOB=document.getElementById("DOB").value;
-        var username=document.getElementById("username").value;
-        var password=document.getElementById("password").value;
-        var gender=document.getElementById("gender").value;
-        var image=document.getElementById("image").value;
+        var T_name=document.getElementById("tuff_name").value;      
+        var T_place=document.getElementById("T_place").value;
+        var amount=document.getElementById("amount").value;
         
-     if (c_name=="")
+       
+        
+     if (T_name=="")
       {
-        document.getElementById("sp1").innerHTML="Enter your Name";
+        document.getElementById("sp1").innerHTML="Enter your Turf Name";
         return false;
-      }
-            
+      }  
       
-      if (email=="")
+      if (T_place=="")
       {
-        document.getElementById("sp2").innerHTML="Enter your email";
+        document.getElementById("sp2").innerHTML="Enter your Turf place";
         return false;
       }
-      if (contact =="")
+      if (amount =="")
       {
-        document.getElementById("sp3").innerHTML="Enter your Contact number";
+        document.getElementById("sp3").innerHTML="Enter Amonunt";
         return false;
       }
-      if (address=="")
-      {
-        document.getElementById("sp4").innerHTML="enter your address";
-        return false;
-
-      }     
-      if (DOB =="")
-      {
-      document.getElementById("sp5").innerHTML=" Enter your Date of birth";
-      return false;
-      }
-       if ( username =="")
-       {
-        document.getElementById("sp6").innerHTML="Enter your username";
-        return false;
-       }
-       if ( password=="")
-       {
-        document.getElementById("sp7").innerHTML="Enter your Password";
-        return false;
-       }
-       if ( gender=="")
-       {
-        document.getElementById("sp8").innerHTML="Enter your gender";
-        return false;
-       }
-       if ( image=="")
-       {
-        document.getElementById("sp9").innerHTML="upload the image";
-        return false;
-       }
+      
        return true;
       }
-       
+        
       function clearmsg(sp)
 
 {  
@@ -267,82 +230,13 @@ document.getElementById(sp).innerHTML="";
  <!-- ======= Footer ======= -->
   <br><footer id="footer">
 
-<!-- <div class="footer-newsletter"> -->
-  <!-- <div class="container"> -->
-    <!-- <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <h4>Join Our Newsletter</h4>
-        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-        <form action="" method="post">
-          <input type="email" name="email"><input type="submit" value="Subscribe">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="footer-top">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-6 footer-contact">
-        <h3>Arsha</h3>
-        <p>
-          A108 Adam Street <br>
-          New York, NY 535022<br>
-          United States <br><br>
-          <strong>Phone:</strong> +1 5589 55488 55<br>
-          <strong>Email:</strong> info@example.com<br>
-        </p>
-      </div>
-
-      <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Useful Links</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Our Social Networks</h4>
-        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-        <div class="social-links mt-3">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div> -->
-
+<
 <div class="container footer-bottom clearfix">
   <div class="copyright">
     &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
   </div>
   <div class="credits">
-    <!-- All the links in the footer should remain intact. -->
-    <!-- You can delete the links only if you purchased the pro version. -->
-    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+   
     Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
   </div>
 </div>

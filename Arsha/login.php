@@ -78,7 +78,7 @@ echo "invalid id or password";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>COMMON TEMPLATE</title>
+  <title>LOGIN</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 <style>
@@ -126,7 +126,7 @@ echo "invalid id or password";
       <nav id="navbar" class="navbar">
         <ul>
           
-          <li><a class="getstarted scrollto" href="index.php">Home</a></li>
+          <li><a class="getstarted scrollto" href="index.php">home</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -140,7 +140,7 @@ echo "invalid id or password";
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card shadow-2-strong" style="border-radius: 1rem; margin: bottom 100px;">
           <div class="card-body p-5 text-center">
             <form action="" method="POST">
 
@@ -155,28 +155,28 @@ echo "invalid id or password";
               </div>
 
             <div class="form-outline mb-4">
-              <input type="email"name="username" class="form-control form-control-lg" />
-              <label class="form-label" for="typeEmailX-2" >Email</label>
+              <input type="email"name="username"id="email" placeholder="Enter your username" class="form-control form-control-lg"onkeyup="clearmsg('sp1')" style="width:350px;">
+              <span style="color: red;" id="sp1"></span>
+              <!-- <label class="form-label" for="typeEmailX-2" >Email</label> -->
             </div>
 
             <div class="form-outline mb-4">
-              <input type="password" id="typePasswordX-2"  name="password" class="form-control form-control-lg" />
-              <label class="form-label" for="typePasswordX-2">Password</label>
+              <input type="password" id="password"  name="password" class="form-control form-control-lg" placeholder="Enter your password" onkeyup="clearmsg('sp1')" style="width:350px;">
+              <!-- <label class="form-label" for="typePasswordX-2">Password</label> -->
+              <span style="color: red;" id="sp2"></span>
             </div>
 
 
             
             <!-- Checkbox -->
             
-            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Login</button>
+            <button class="btn btn-primary btn-lg btn-block p-1" type="submit" name="submit" onclick="return validation();">Login</button>
 
             <hr class="my-4">
 
-            <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color:skyblue; color:white;"
-              type="submit" ><a href="customer__registration.php">user registration</a></button>
-
-            <button class="btn btn-lg btn-block btn-secondary mb-2" style="background-color: skyblue;"
-              type="submit"><a href="owners  _reg.php"></i>Owner registration</a></button>
+  
+             <a href="customer__registration.php" class="btn btn-lg btn-block btn-primary mb-2 p-1">user registration</a>
+             <a href="owners  _reg.php"  class="btn btn-lg btn-block btn-primary mb-2 p-1"></i>Owner registration</a>
               </form>
           </div>
         </div>
@@ -188,34 +188,7 @@ echo "invalid id or password";
   <main id="main">
 
        
-    <!-- ======= About Us Section ======= -->
     
-    <!-- ======= Why Us Section ======= -->
-   
-    <!-- ======= Cta Section ======= -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio"> -->
-      <!-- <div class="container" data-aos="fade-up"> -->
-
-       
-    <!-- </section>End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
- 
-
-    <!-- ======= Pricing Section ======= -->
-    
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-   
-
-    <!-- ======= Contact Section ======= -->
-  
-<!-- </section>End Contact Section -->
-
-  </main><!-- End #main -->
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container footer-bottom clearfix">
@@ -223,10 +196,7 @@ echo "invalid id or password";
         &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+             
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -273,7 +243,35 @@ echo "invalid id or password";
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-<section class="vh-100" style="background-color: #508bfc;">
+<script>
+    function validation()
+    {       
+        var username=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+     
+       if ( username =="")
+       {
+        document.getElementById("sp1").innerHTML="Enter your username";
+        return false;
+       }
+       if ( password=="")
+       {
+        document.getElementById("sp2").innerHTML="Enter your Password";
+        return false;
+       }
+      
+       //return true;
+      }
+       
+      function clearmsg(sp)
+
+{  
+document.getElementById(sp).innerHTML="";
+}
+
+  </script>
+
+  
   
 </section>
   </body>

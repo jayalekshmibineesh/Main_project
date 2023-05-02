@@ -9,14 +9,35 @@ include 'connection.php';
 
 <head>
     
-    <style>
-      table,tr,th,td
-        {
-            border:2px solid black;
+    <!-- <style>
+        table,tr,th,td
+            {
+            border: 2px solid black;
             border-collapse:collapse;
-        }
-       
-      body
+            width: 50%;
+            }
+              tr,th,td{
+                        color:white;
+                      }  -->
+                     <style>  
+    table , tr,td,th{
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 50%;
+  }
+  
+  th, td {
+    
+    padding: 8px;
+    text-align: left;
+    color:white;
+  }
+  
+  th {
+    background-color:green;
+  }
+</style> 
+<!-- /* body 
       {
         color:white;
       }
@@ -31,7 +52,7 @@ include 'connection.php';
         }
         span{
           color:pink;
-        }
+        }  */  -->
 
         </style>
   <meta charset="utf-8">
@@ -74,14 +95,9 @@ include 'connection.php';
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="#">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
+          <li><a class="nav-link scrollto active" href="ownerhome.php">Home</a></li>
           
-          <li><a class="nav-link scrollto" href="#login">Login</a></li>
-
-          <li><a class="nav-link scrollto" href="#contact">Register</a></li> 
+          <li><a class="nav-link scrollto" href="logout.php">Logout</a></li> 
           <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -91,60 +107,35 @@ include 'connection.php';
   </header><!-- End Header -->
 <!-- 
   ======= Hero Section ======= -->
-  
+  <section id="hero">
   <h2><center><span> OWNERS TURF VIEW</span></center></h2><br>  
+ 
+ <center>
+<table class="table-bordered">
+  <!-- <thead> -->
+    <tr>
+      <th>Turf Name</th>
+      <th>Turf Place</th>
+      <th>Image</th>
+      <th>Amount</th>
+    </tr>
+  <!-- </thead> -->
+  <!-- <body> -->
+    <?php while($row = mysqli_fetch_assoc($data)) { ?>
+      <tr>
+        <td><?php echo $row['Turf_name']; ?></td>
+        <td><?php echo $row['Turf_place']; ?></td>
+        <td><img src="./images/<?php echo $row['Image']; ?>" alt="image not found" height="40" width="40"></td>
+        <td><?php echo $row['Amount']; ?></td>
+      </tr>
+    <?php } ?>
+  <!-- </tbody> -->
+</table>
+</center> 
           
         
-          <center>
-      <table class="table table-bordred">
-          <tr>
-              <th>TurfName</th>
-              <th> TurfPlace</th>
-              <th>Image</th>
-              <th>Amount</th>
-           </tr>
-  
-          <?php
-          
-           while($row= mysqli_fetch_assoc($data))
-           { 
-          ?>
-           
-           <tr>
-            <td><?php echo $row['Turf_name'];?></td>
-            <td><?php echo $row['Turf_place'] ;?></td>
-            <td> <img src="./images/<?php echo $row['Image'];?>" alt="image notfound" height="40" width="40"></td>
-            <td><?php echo $row['Amount'];?></td>
-            
-                      
-          </tr>
-           
-        <?php
-         }
-         ?>
-  
-     </table>
-     </center>
-        </section>
-        </div>
+                  </section>
        
-       </div>
-       
-    </div>
-
-  </section>
-  <!-- <section id="customer_reg" class="contact">
-      <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left">
-       <div class="row">
-          <div class="col-mb-4">
-           
-                     </div>
-                        </div>
-                        </div>
-    
-   </section> -->
-   <!-- // End Contact Section -->
-
                             
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -233,83 +224,13 @@ document.getElementById(sp).innerHTML="";
  <!-- ======= Footer ======= -->
   <br><footer id="footer">
 
-<!-- <div class="footer-newsletter"> -->
-  <!-- <div class="container"> -->
-    <!-- <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <h4>Join Our Newsletter</h4>
-        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-        <form action="" method="post">
-          <input type="email" name="email"><input type="submit" value="Subscribe">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="footer-top">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-6 footer-contact">
-        <h3>Arsha</h3>
-        <p>
-          A108 Adam Street <br>
-          New York, NY 535022<br>
-          United States <br><br>
-          <strong>Phone:</strong> +1 5589 55488 55<br>
-          <strong>Email:</strong> info@example.com<br>
-        </p>
-      </div>
-
-      <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Useful Links</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Our Social Networks</h4>
-        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-        <div class="social-links mt-3">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div> -->
 
 <div class="container footer-bottom clearfix">
   <div class="copyright">
     &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
   </div>
   <div class="credits">
-    <!-- All the links in the footer should remain intact. -->
-    <!-- You can delete the links only if you purchased the pro version. -->
-    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
   </div>
 </div>
 </footer><!-- End Footer -->

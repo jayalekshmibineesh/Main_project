@@ -15,6 +15,7 @@ include 'connection.php';
             if($sql)
             {
                 echo'<script> alert("Password Updated")</script>';
+                header('location:changepassword.php'); 
             }
             else
             {
@@ -82,7 +83,7 @@ $con->close();
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto active" href="adminhome.php">Home</a></li>
            <li><a class="nav-link scrollto" href="logout.php">logout</a></li>
 
           <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
@@ -99,16 +100,20 @@ $con->close();
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h2><span>CHANGE PASSWORD</span></h2>
+          
         </div>
-        <form action="" method=POST>
+        <form action="" method="POST">
             <div class="card" style="width:40%;background-color:grey">
+            <h2><span>CHANGE PASSWORD</span></h2>
             <label for="current_password"> current password</label>
-            <input type="text" name="old_password"required> <br>
+            <input type="text" name="old_password" id="oldpassword" onkeyup="clearmsg('sp1')">
+            <span id="sp1" style="color:red"></span>
+            <br>
             <label for="">New password</label>
-            <input type="password" name="new_password"required> <br>
+            <input type="password" name="new_password"id="newpassword" onkeyup="clearmsg('sp2')">
+            <span id="sp2" style="color:red"></span> <br>
             
-            <input type="submit" name="submit" value="submit"> <br>
+            <input type="submit" name="submit" value="submit" onclick="return validation();"> <br>
         </div>
         </form>
       </div>
@@ -117,36 +122,6 @@ $con->close();
 
   </section><!-- End Hero -->
 
-  <main id="main">
-
-       
-    <!-- ======= About Us Section ======= -->
-    
-    <!-- ======= Why Us Section ======= -->
-   
-    <!-- ======= Cta Section ======= -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio"> -->
-      <!-- <div class="container" data-aos="fade-up"> -->
-
-       
-    <!-- </section>End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
- 
-
-    <!-- ======= Pricing Section ======= -->
-    
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-   
-
-    <!-- ======= Contact Section ======= -->
-  
-<!-- </section>End Contact Section -->
-
-  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -155,10 +130,7 @@ $con->close();
         &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -178,6 +150,32 @@ $con->close();
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    function validation()
+    {       
+        var oldpassword=document.getElementById("oldpassword").value;
+        var newpassword=document.getElementById("newpassword").value;
+     
+       if ( oldpassword =="")
+       {
+        document.getElementById("sp1").innerHTML="Enter your oldpassword";
+        return false;
+       }
+       if ( newpassword=="")
+       {
+        document.getElementById("sp2").innerHTML="Enter your NewPassword";
+        return false;
+       }
+      
+       //return true;
+      }
+       
+      function clearmsg(sp)
+
+{  
+document.getElementById(sp).innerHTML="";
+}
+</script>
 
 </body>
 

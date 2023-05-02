@@ -22,7 +22,7 @@ $id1=$_SESSION['id'];
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>COMMON TEMPLATE</title>
+  <title>PAYMENT</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 <style>
@@ -88,13 +88,17 @@ $id1=$_SESSION['id'];
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <div class="card">
+          <div class="card" style="background-color: green;">
           <form action="" method="POST">
-            <input type="text" name="amount" value="<?php echo $row["Amount"];?>">
+
+            <center>
+              <h3>Make payment</h3>
+              <input type="text" name="amount" value="<?php echo $row["Amount"];?>">
             <P>Status:</P>
             <input type="radio" id="radio" name="status" value="paid">paid
-            <input type="radio" id="radio"name="status" value="unpaid">unpaid
-            <input class="btb btn-primary" type="submit" name="submit" value="submit" >
+            <input type="radio" id="radio"name="status" value="unpaid">unpaid <br>
+            <input class="btn btn-primary" type="submit" name="submit" value="submit" >
+            </center>
           </form>
         </div>
        </div>

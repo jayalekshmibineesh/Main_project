@@ -4,13 +4,13 @@ include 'connection.php';
 $id1=$_GET['id'];
 $data=mysqli_query($con,"SELECT * FROM `customer_registration` WHERE  Customer_id='$id1'");
 $row=mysqli_fetch_assoc($data);
-$gender=$_POST['gender'];
+
 if(isset($_POST['submit']))
 {
   $customername=$_POST['customer_name'];
   $email=$_POST['email'];
   $address=$_POST['address'];
-  $gender=$_POST['gender'];
+
   $contact=$_POST['contact'];
   $DOB=$_POST['dob'];
   
@@ -48,7 +48,7 @@ if(isset($_POST['submit']))
       move_uploaded_file($_FILES['f1']['tmp_name'],"images/".$filenew);
     }
 
-  mysqli_query($con,"UPDATE `customer_registration` SET `Customer_name`='$customername',`gender`='$gender',`Email`='$email',`Address`='$address',`Contact`='$contact',`DOB`='$DOB',`image`='$filenew' where Customer_id='$id1'");
+  mysqli_query($con,"UPDATE `customer_registration` SET `Customer_name`='$customername',`Email`='$email',`Address`='$address',`Contact`='$contact',`DOB`='$DOB',`image`='$filenew' where Customer_id='$id1'");
   
  // echo' <script> alert(updated Successfully)</script>';
 
@@ -109,7 +109,7 @@ if(isset($_POST['submit']))
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="customer_profile.php">Back</a></li>
           <li><a class="nav-link scrollto" href="customer_home.php">Customerhome</a></li>
           <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
@@ -126,16 +126,18 @@ if(isset($_POST['submit']))
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-      <center> <div class="card" style="width:70%;">
+      <center> <div class="card" style="width:80%;">
          <form  action="" method="POST" enctype="multipart/form-data" required>  
             <h2><center><span>CUSTOMER EDIT PROFILE</span></center></h2>          
                             <div class="form-group">
                             <input  type="file"  id="imge"name="f1" class="form-control mt-2 mb-2"placeholer="Upload your profilepic" >
                             <span style="color: red;" id="sp9"></span><br>
  
-                                <input type="text" id="Customer_name"class="form-control mt-1" placeholder="Your Name *" value="<?php echo $row['Customer_name'];?>" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
-                                <span style="color: red;" id="sp1"></span>
+                                <!-- <input type="text" id="c_name"class="form-control mt-1" placeholder="Your Name *" value="<?php echo $row['Customer_name'];?>" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
+                                <span style="color: red;" id="sp1"></span> -->
                                 
+                            <input type="text" id="c_name" class="form-control mt-2" placeholder="Your Name *" value="<?php echo $row['Customer_name'];?>" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
+                             <span style="color: red;" id="sp1"></span>
                           
                             
                                 <input type="text"id="email" class="form-control mt-2" placeholder="Email *" value="<?php echo $row['Email'];?>" name="email" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
@@ -150,17 +152,10 @@ if(isset($_POST['submit']))
                             
                             
                                 <input type="date"id="DOB" class="form-control mt-2" placeholder="Your Date of Birth" value="<?php echo $row['DOB'];?>> "name="dob"onkeyup="clearmsg('sp5')" style="width:350px;"> 
-                                <span style="color: red;" id="sp5"></span>                        
-
-                               <input type="radio" style="color:white" name="gender" id="gender" value='male'<?php if($gender=='male') echo 'checked="checked"'?>>male
-                               <input type="radio" style="color:white" name="gender"  id="gender" value='female'<?php if($gender=='Female') echo 'checked="checked"'?>>female  
-                                <span style="color: red;" id="sp8"></span><br>
-
+                                <span style="color: red;" id="sp5"></span>                                                   
                                
-                               
-
-                                <button name="submit"type="submit" class="btn btn-primary" onclick="return validation();return false;">Edit</button>
-                            
+                                <!-- <button name="submit"type="submit" class="btn btn-primary" onclick="return validation();return false;">Edit</button> -->
+                                <button class="btn btn-primary mb-2" name="submit" onclick="return validation();">Update</button>                              
                                
                               </div>
                               <br>
@@ -185,39 +180,7 @@ if(isset($_POST['submit']))
     </div>
 
   </section><!-- End Hero -->
-
-  <main id="main">
-
-       
-    <!-- ======= About Us Section ======= -->
-    
-    <!-- ======= Why Us Section ======= -->
-   
-    <!-- ======= Cta Section ======= -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio"> -->
-      <!-- <div class="container" data-aos="fade-up"> -->
-
-       
-    <!-- </section>End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
  
-
-    <!-- ======= Pricing Section ======= -->
-    <
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-   
-
-    <!-- ======= Contact Section ======= -->
-    <
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -234,26 +197,19 @@ if(isset($_POST['submit']))
   <script src="assets/js/main.js"></script>
   <script>
 
-    function validation()
-    { 
-        var c_name=document.getElementById("c_name").value;      
+function validation()
+       {
+        var c_name=document.getElementById("c_name").value;
         var email=document.getElementById("email").value;
-        var address=document.getElementById("address").value;
         var contact=document.getElementById("contact").value;
-        var DOB=document.getElementById("DOB").value;
-        var username=document.getElementById("username").value;
-        var password=document.getElementById("password").value;
-        var gender=document.getElementById("gender").value;
-        var image=document.getElementById("image").value;
-        
-     if (c_name=="")
-      {
-        document.getElementById("sp1").innerHTML="Enter your Name";
-        return false;
-      }
-            
-      
-      if (email=="")
+        var address=document.getElementById("address").value;
+       if (c_name=="")
+         {
+          document.getElementById("sp1").innerHTML="Enter your Name";
+           return false;
+         }
+               
+        if (email=="")
       {
         document.getElementById("sp2").innerHTML="Enter your email";
         return false;
@@ -269,33 +225,9 @@ if(isset($_POST['submit']))
         return false;
 
       }     
-      if (DOB =="")
-      {
-      document.getElementById("sp5").innerHTML=" Enter your Date of birth";
-      return false;
-      }
-       if ( username =="")
-       {
-        document.getElementById("sp6").innerHTML="Enter your username";
-        return false;
-       }
-       if ( password=="")
-       {
-        document.getElementById("sp7").innerHTML="Enter your Password";
-        return false;
-       }
-       if ( gender=="")
-       {
-        document.getElementById("sp8").innerHTML="Enter your gender";
-        return false;
-       }
-       if ( image=="")
-       {
-        document.getElementById("sp9").innerHTML="upload the image";
-        return false;
-       }
-       return true;
-      }
+       
+      // return true;
+    }
        
       function clearmsg(sp)
 

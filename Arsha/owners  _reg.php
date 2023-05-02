@@ -58,7 +58,9 @@ if(isset($_POST['submit']))
         span{
           color:pink;
         }
-
+.nova{
+      margin-left:20px;
+}
         </style>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -134,15 +136,16 @@ if(isset($_POST['submit']))
                 <div class="note">
                 <h2><center><span>OWNERS REGISTRATION</span></center></h2><br>
                 </div>--> 
-                <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left">
+                <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left" >
         <div class="row">
-          <div class="col-mb-4">
+          <div class="col-mb-4"style="text-align:center;" >
           <h4><center><span>OWNERS REGISTRATION</span></center></h4><br>
             <form  action="" method="POST" enctype="multipart/form-data" required>            
-                            <div class="form-group">
+                            <div class="form-group" >
+                              <div class="nova">
                                 <input type="text" id="c_name"class="form-control mt-2" placeholder="Your Name *" value="" name="owner_name" onkeyup="clearmsg('sp1')" style="width:350px;">
                                 <span style="color: red;" id="sp1"></span>
-                          
+      
                             
                                 <input type="text"id="email" class="form-control mt-2" placeholder="Email *" value="" name="email" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
                                 <span style="color: red;" id="sp2"></span>
@@ -154,10 +157,9 @@ if(isset($_POST['submit']))
                           
                                 <input type="text"id="address" class="form-control mt-2" placeholder="Your Address*" value="" name="address" onkeyup="clearmsg('sp4')"  style="width:350px;">
                                 <span style="color: red;" id="sp4"></span>
+                          
                             
-                            
-                                
-                      
+                                                
                       
                                 <input type="text" id="username" class="form-control mt-2" placeholder="Your username" value="" name="username" onkeyup="clearmsg('sp6')"  style="width:350px;"> 
                                 <span style="color:red;" id="sp6"></span>
@@ -167,16 +169,16 @@ if(isset($_POST['submit']))
                                 <input type="password" id="password"class="form-control mt-2" placeholder="Your Password *" value="" name="password" onkeyup="clearmsg('sp7')" style="width:350px;">
                                 <span style="color: red;" id="sp7"></span><br><br>
                                 
-                                <input  type="file" id="imge"name="f1" class="form-control mt-2 mb-2"placeholer="Upload your profilepic">
+                                <input  type="file" id="imge"name="f1" class="form-control mt-1 mb-5"placeholer="Upload your profilepic">
 
                             
                                
-                                      
+                                </div>   
                               </div>
                                <!-- <input type="submit" class="btn btn-primary" name="submit"  value="Submit">      -->
-                            <button name="submit" onclick="return validation();return false;">SUBMIT</button>
+                            <button class="btn btn-primary mb-5"  name="submit" onclick="return validation();return false;">SUBMIT</button>
                             </form>
-      </div>
+                        </div>
                         </div>
                         </div>
 

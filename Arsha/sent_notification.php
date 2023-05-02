@@ -29,7 +29,10 @@ else
   <meta content="" name="keywords">
 <style>
     
-   
+  .btn{
+width: 60px;
+
+  } 
 </style>
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -65,36 +68,15 @@ else
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM</a></h1>
+      <h1 class="logo me-auto"><a href="index.php">TURF MANAGEMENT SYSTEM</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="nav-link scrollto active" href="adminhome.php">Home</a></li>
+          <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
+          <li><a class="getstarted scrollto" href="adminhome.php">AdminHome</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -105,11 +87,11 @@ else
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
 <form action="" method=POST>
-    <div class="container">
+    <div class="container"data-aos="fade-up" style="background-color:green; width:500px; margin-left:300px;float:left">
       <div class="row">
+      <center><h3> <strong> ADMIN  SEND NOTIFICATION </strong></h3>
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-         
-          <h2>ADMIN  SENDING NOTIFICATION PAGE</h2>
+                  
          <div class=" form-group mt-4">
             <?php echo"<select name='Customer_id'>" ;
             while($row=mysqli_fetch_assoc($result))
@@ -117,50 +99,19 @@ else
                 echo "<option value='" .$row['Customer_id']."'>".$row['Customer_name']."( ID:".$row['Customer_id'].") </option>";
             }
             echo "</select>";
-            ?>
+            ?> <br><br>
          </div> 
-        <div class="form-group-mt-4">
-            <label for=""> Notification:</label>
-            <input type="text"  name ="notification" placeholder="notification">
-        </div>
-        <input type="submit"class="btn-btn-primary" name="send" value="send">
+        <div class="form-group-mt-5 mb-2">
+            <textarea name="notification" id="" cols="20" rows="10" placeholder="type message here"></textarea>
+        </div> <br>
+             <center> <button type="submit" class="btn btn-primary mb-3"name="send"id="btn">send</button></center> 
         </div>
       </div>
+      <center>
     </div>
 </form>
 
   </section><!-- End Hero -->
-
-  <main id="main">
-
-       
-    <!-- ======= About Us Section ======= -->
-    
-    <!-- ======= Why Us Section ======= -->
-   
-    <!-- ======= Cta Section ======= -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio"> -->
-      <!-- <div class="container" data-aos="fade-up"> -->
-
-       
-    <!-- </section>End Portfolio Section -->
-
-    <!-- ======= Team Section ======= -->
- 
-
-    <!-- ======= Pricing Section ======= -->
-    
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-   
-
-    <!-- ======= Contact Section ======= -->
-  
-<!-- </section>End Contact Section -->
-
-  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -169,17 +120,13 @@ else
         &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
