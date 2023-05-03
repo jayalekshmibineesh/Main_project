@@ -88,49 +88,38 @@ else
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
     <div class="container">
     <form action="" method="POST">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-        
-        <center><h2> SEND FEEDBACK</h2>
-        <div class="card"style="width: 500px;background-color:green;">
-          
-          <div class="form group mt-4">
-            <!-- <label for="">Message</label> -->
-            <textarea name="message" id="" cols="20" rows="10" placeholder="type message here"></textarea>
-          </div>
-          <div class="form group mt-4">
-            <label for="">Date</label>
-             <input type="date" name="date" value="date">
-          </div>
-         <center> <div class="form group mt-4">
-            <input class="btn btn-primary mb-3" type="submit" name="submit" value="submit">
-          </div></center>
-        </div>
+                  <center><h2> SEND FEEDBACK</h2>
+           <div class="card"style="width: 500px;background-color:green;">
+              <div class="form group mt-4">
+                  <textarea name="message" id="" cols="20" rows="10" placeholder="type message here"></textarea>
+              </div>
+              <div class="form group mt-4">
+                <label for="">Date</label>
+                <input type="date" name="date" value="date">
+             </div>
+              <div class="form group mt-4">
+                <input class="btn btn-primary mb-3" type="submit" name="submit" value="submit">
+              </div>
+           </div>
         </center>
+       </div>
       </div>
-    </div>
-    </form>       
-</div>
-     
-  </section><!-- End Hero -->
-
- 
+   </form>       
+  </div>     
+</section><!-- End Hero -->
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+         <div class="copyright">
+              &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
+          </div>
+         <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+         </div>
     </div>
   </footer><!-- End Footer -->
 

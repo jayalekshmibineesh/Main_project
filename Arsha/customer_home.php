@@ -31,14 +31,6 @@ include 'connection.php';
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Arsha
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -48,9 +40,6 @@ include 'connection.php';
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -87,15 +76,10 @@ include 'connection.php';
       </div>
     </div>
 
-  </section><!-- End Hero -->
+  </section><!-- End Hero 
 
-
-
-  
-
-  <!-- ======= Footer ======= -->
+   ======= Footer ====== -->
   <footer id="footer">
-
      <div class="container footer-bottom clearfix">
       <div class="copyright">
         &copy; Copyright <strong><span>Futura Labs</span></strong>. All Rights Reserved

@@ -36,7 +36,7 @@ echo"error";
  }
 }
 }
-}
+
 ?>  
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ echo"error";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>COMMON TEMPLATE</title>
+  <title>BOOK TURF</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 <style>
@@ -71,13 +71,7 @@ echo"error";
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Arsha
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body>
@@ -85,15 +79,10 @@ echo"error";
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-
       <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
+        <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          
+          <li><a class="nav-link scrollto active" href="customer_home.php">Home</a></li>
           <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
           <li><a class="getstarted scrollto" href="customer_turfview.php">Back</a></li>
         </ul>
@@ -114,10 +103,8 @@ echo"error";
             {
 
             ?>
-               <div class="form-group mt-4"> 
- 
-       
- <?php echo'<img src="./images/'.$row["Image"].'" height="200px" width="200px">';?> 
+        <div class="form-group mt-4"> 
+           <?php echo'<img src="./images/'.$row["Image"].'" height="200px" width="200px">';?> 
         </div> 
         <div class="form-group mt-4">
             <?php echo "Turf_id: " .$row['Turf_id'];?>

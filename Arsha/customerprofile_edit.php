@@ -126,20 +126,16 @@ if(isset($_POST['submit']))
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-      <center> <div class="card" style="width:80%;">
-         <form  action="" method="POST" enctype="multipart/form-data" required>  
-            <h2><center><span>CUSTOMER EDIT PROFILE</span></center></h2>          
-                            <div class="form-group">
-                            <input  type="file"  id="imge"name="f1" class="form-control mt-2 mb-2"placeholer="Upload your profilepic" >
-                            <span style="color: red;" id="sp9"></span><br>
- 
-                                <!-- <input type="text" id="c_name"class="form-control mt-1" placeholder="Your Name *" value="<?php echo $row['Customer_name'];?>" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
-                                <span style="color: red;" id="sp1"></span> -->
-                                
-                            <input type="text" id="c_name" class="form-control mt-2" placeholder="Your Name *" value="<?php echo $row['Customer_name'];?>" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
-                             <span style="color: red;" id="sp1"></span>
+ <center> <div class="card" style="width:80%;">
+            <form  action="" method="POST" enctype="multipart/form-data" required>  
+                       <h2><center><span>CUSTOMER EDIT PROFILE</span></center></h2>          
+                        <div  class="form-group">
+                              <input  type="file"  id="imge"name="f1" class="form-control mt-2 mb-2"placeholer="Upload your profilepic" >
+                              <span style="color: red;" id="sp9"></span><br>
+
+                               <input type="text" id="c_name" class="form-control mt-2" placeholder="Your Name *" value="<?php echo $row['Customer_name'];?>" name="customer_name" onkeyup="clearmsg('sp1')" style="width:350px;">
+                               <span style="color: red;" id="sp1"></span>
                           
-                            
                                 <input type="text"id="email" class="form-control mt-2" placeholder="Email *" value="<?php echo $row['Email'];?>" name="email" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
                                 <span style="color: red;" id="sp2"></span>
                                                                                        
@@ -157,28 +153,14 @@ if(isset($_POST['submit']))
                                 <!-- <button name="submit"type="submit" class="btn btn-primary" onclick="return validation();return false;">Edit</button> -->
                                 <button class="btn btn-primary mb-2" name="submit" onclick="return validation();">Update</button>                              
                                
-                              </div>
-                              <br>
-                               <!-- <input type="submit" class="btn btn-primary" name="submit"  value="Submit">      -->
-                            
+                           </div>
+                              <br>                           
                             </form>
-       </div></center>
-       
-       </div>
-       
-    </div>
-
-
-         </div>
-
-          </div>
-        </div>
-        
-         
-        </div>
-      </div>
-    </div>
-
+                        </div></center>
+                   </div>
+                </div>
+           </div>
+      
   </section><!-- End Hero -->
  
   <div id="preloader"></div>
@@ -197,13 +179,13 @@ if(isset($_POST['submit']))
   <script src="assets/js/main.js"></script>
   <script>
 
-function validation()
+      function validation()
        {
         var c_name=document.getElementById("c_name").value;
         var email=document.getElementById("email").value;
         var contact=document.getElementById("contact").value;
         var address=document.getElementById("address").value;
-       if (c_name=="")
+        if (c_name=="")
          {
           document.getElementById("sp1").innerHTML="Enter your Name";
            return false;
@@ -227,33 +209,23 @@ function validation()
       }     
        
       // return true;
-    }
-       
+    }  
       function clearmsg(sp)
-
-{  
-document.getElementById(sp).innerHTML="";
-}
+        {  
+           document.getElementById(sp).innerHTML="";
+        }
 
 </script> 
 <!-- ======= Footer ======= -->
-<footer id="footer">
-    <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
+    <footer id="footer">
+      <div class="container footer-bottom clearfix">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
+        </div>
+         <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
- 
-
-</body>
-
+   </footer><!-- End Footer -->
+ </body>
 </html>

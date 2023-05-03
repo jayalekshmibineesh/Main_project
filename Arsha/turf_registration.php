@@ -112,13 +112,8 @@ if(isset($_POST['submit']))
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="Ownerturf_view.php"> Turf</a></li>
-         >
-          <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
-          
           <li><a class="nav-link scrollto" href="login.php">Login</a></li>
-
-          
-          <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="">Register</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -155,29 +150,11 @@ if(isset($_POST['submit']))
                             
                                
                               </div>
-                              <br>
-                               <!-- <input type="submit" class="btn btn-primary" name="submit"  value="Submit">      -->
-                            
-                            </form>
-       </div>
-       
-       </div>
-       
-    </div>
-
-  </section>
-  <!-- <section id="customer_reg" class="contact">
-      <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left">
-       <div class="row">
-          <div class="col-mb-4">
-           
-                     </div>
-                        </div>
-                        </div>
-    
-   </section> -->
-   <!-- // End Contact Section -->
-
+                              <br>                       
+                           </form>
+                         </div>      
+                      </div>
+                   </section>
                             
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -197,9 +174,7 @@ if(isset($_POST['submit']))
         var T_name=document.getElementById("tuff_name").value;      
         var T_place=document.getElementById("T_place").value;
         var amount=document.getElementById("amount").value;
-        
-       
-        
+             
      if (T_name=="")
       {
         document.getElementById("sp1").innerHTML="Enter your Turf Name";

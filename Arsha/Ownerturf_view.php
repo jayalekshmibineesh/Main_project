@@ -90,19 +90,14 @@ include 'connection.php';
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM </a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
+        <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="ownerhome.php">Home</a></li>
-          
-          <li><a class="nav-link scrollto" href="logout.php">Logout</a></li> 
-          <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
+            <li><a class="nav-link scrollto" href="logout.php">Logout</a></li> 
+          <li><a class="nav-link scrollto" href="owner_home.php">Register</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
 <!-- 
@@ -112,15 +107,14 @@ include 'connection.php';
  
  <center>
 <table class="table-bordered">
-  <!-- <thead> -->
+  
     <tr>
       <th>Turf Name</th>
       <th>Turf Place</th>
       <th>Image</th>
       <th>Amount</th>
     </tr>
-  <!-- </thead> -->
-  <!-- <body> -->
+   
     <?php while($row = mysqli_fetch_assoc($data)) { ?>
       <tr>
         <td><?php echo $row['Turf_name']; ?></td>
@@ -129,14 +123,9 @@ include 'connection.php';
         <td><?php echo $row['Amount']; ?></td>
       </tr>
     <?php } ?>
-  <!-- </tbody> -->
-</table>
+  </table>
 </center> 
-          
-        
-                  </section>
-       
-                            
+</section>                           
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -234,8 +223,6 @@ document.getElementById(sp).innerHTML="";
   </div>
 </div>
 </footer><!-- End Footer -->
-
-
 </body>
 
 </html>

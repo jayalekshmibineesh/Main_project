@@ -75,29 +75,17 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
-          <li><a class="nav-link scrollto" href="customer_profile.php">Back</a></li>
-          
-          
-          
-          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+          <li><a class="nav-link scrollto" href="customer_profile.php">Back</a></li>         
+          <li><a class="getstarted scrollto" href="customer_home.php">Home</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
-  </section><!-- End Hero -->
-
-  <main id="main">
-    <section>
-    <div class="container">
+  <div class="container">
   <div class="row">
     <?php while($row=mysqli_fetch_assoc($sql)) { ?>
     <div class="col-md-4">
@@ -117,9 +105,31 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
   </div>
 </div>
 
-       
-   
-  </main><!-- End #main -->
+  </section><!-- End Hero -->
+
+  <!-- <main id="main">
+    <section>
+  <div class="container">
+  <div class="row">
+    <?php while($row=mysqli_fetch_assoc($sql)) { ?>
+    <div class="col-md-4">
+      <div class="card" style="margin-bottom: 20px;border-radius:40px;">
+        <img  src="./images/<?php echo $row['Image']; ?>" alt="image not found">
+       <center>
+        <div class="card-body">
+          <h5 class="card-title"><?php echo $row['Turf_name']; ?></h5>
+          <p class="card-text"><?php echo $row['Turf_place']; ?></p>
+          <p class="card-text">Amount: <?php echo $row['Amount']; ?></p>
+          <a href="bookturf.php?id=<?php echo $row['Turf_id']; ?>" class="btn btn-primary">Book Now</a>
+        </div>
+        </center>
+      </div>
+    </div>
+    <?php } ?>
+  </div>
+</div>
+    
+  </main>End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -128,10 +138,6 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
         &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
@@ -152,8 +158,7 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
-
+ </body>
 </html>
 
 <?php

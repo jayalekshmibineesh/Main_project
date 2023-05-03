@@ -73,19 +73,13 @@ $data=mysqli_query($con,"select * from customer_registration");
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
+        <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Feedbak</a></li>
           <li><a class="nav-link scrollto" href="#services">notification</a></li>
-          <li><a class="nav-link   scrollto" href="#portfolio">search</a></li>
-           <li><a class="nav-link scrollto" href="customer__registration.php">register</a></li>
-          <li><a class="nav-link scrollto" href="login.php">Login</a></li>
-
-          
+          <li><a class="nav-link scrollto" href="customer__registration.php">register</a></li>
+          <li><a class="nav-link scrollto" href="login.php">Login</a></li>      
           <li><a class="nav-link scrollto" href="login.php">Logout</a></li> 
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
         </ul> 

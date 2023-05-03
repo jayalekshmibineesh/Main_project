@@ -32,14 +32,7 @@ include 'connection.php';
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Arsha
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+  </head>
 
 <body>
 
@@ -48,39 +41,16 @@ include 'connection.php';
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">OWNERS HOMEPAGE</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="owner_profile.php">profile</a></li>
-          <li><a class="nav-link scrollto" href="turf_registration.php">REGISTER TURF</a></li>
-          <li><a class="nav-link   scrollto" href="Ownerturf_view.php">viewturf</a></li>
-          <li><a class="nav-link scrollto" href="changepassword.php">change password</a></li>
+          <li><a class="nav-link scrollto" href="owner_profile.php">Profile</a></li>
+          <li><a class="nav-link scrollto" href="Ownerturf_view.php">Viewturf</a></li>
+          <li><a class="nav-link scrollto" href="changepassword.php">Change password</a></li>
           <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
-          <li><a class="nav-link scrollto" href="owner_turfbookingdetailsview.php">View_bookings</a></li>
-
-
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>-->
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li> 
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="nav-link scrollto" href="owner_turfbookingdetailsview.php">View_bookings</a></li>         
+          <li><a class="getstarted scrollto" href="turf_registration.php"></a>RegisterTurf</li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -86,15 +86,9 @@ if(isset($_POST['submit']))
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href= "assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Arsha
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ 
 </head>
 
 <body>
@@ -103,11 +97,7 @@ if(isset($_POST['submit']))
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM </a></h1><br>
-     
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM </a></h1><br>  
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
@@ -125,23 +115,13 @@ if(isset($_POST['submit']))
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
-    <!-- <div class="container">
-    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch"> -->
-            <!-- <form  action="" method="POST"  required>
-           
-              <div class="row">
-                < <div class="form-group col-md-6"> -->
-                <!-- <div class="container register-form">
-                <div class="note">
-                <h2><center><span>OWNERS REGISTRATION</span></center></h2><br>
-                </div>--> 
-                <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left" >
+      <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left" >
         <div class="row">
           <div class="col-mb-4"style="text-align:center;" >
           <h4><center><span>OWNERS REGISTRATION</span></center></h4><br>
             <form  action="" method="POST" enctype="multipart/form-data" required>            
                             <div class="form-group" >
+
                               <div class="nova">
                                 <input type="text" id="c_name"class="form-control mt-2" placeholder="Your Name *" value="" name="owner_name" onkeyup="clearmsg('sp1')" style="width:350px;">
                                 <span style="color: red;" id="sp1"></span>
@@ -179,25 +159,10 @@ if(isset($_POST['submit']))
                             <button class="btn btn-primary mb-5"  name="submit" onclick="return validation();return false;">SUBMIT</button>
                             </form>
                         </div>
-                        </div>
-                        </div>
-
-                
-        <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="https://www.thetouristically.com/wp-content/uploads/2022/04/Igraliste-Batarija-Trogir-Croatia-1-453x300.jpg" class="img-fluid animated" alt="image not found"  height=600 width=700>
-        </div> -->
-      <!-- </div>
-    </div>
-     -->
-
-
-  </section><!-- End Hero -->
-
-
- 
-   <!-- // End Contact Section -->
-
-                            
+                      </div>
+                    </div>
+             </section><!-- End Hero -->
+                           
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -218,19 +183,14 @@ if(isset($_POST['submit']))
         var address=document.getElementById("address").value;
         var contact=document.getElementById("contact").value;
         var username=document.getElementById("username").value;
-        var password=document.getElementById("password").value;
-        
-
-        
+        var password=document.getElementById("password").value;      
 
         if (c_name=="")
       {
         document.getElementById("sp1").innerHTML="Enter your Name";
         return false;
       }
-      
-      
-      
+                  
       if (email=="")
       {
         document.getElementById("sp2").innerHTML="Enter your email";
