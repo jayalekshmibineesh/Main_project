@@ -50,7 +50,8 @@ if(isset($_POST['submit']))
 
   mysqli_query($con,"UPDATE `customer_registration` SET `Customer_name`='$customername',`Email`='$email',`Address`='$address',`Contact`='$contact',`DOB`='$DOB',`image`='$filenew' where Customer_id='$id1'");
   
- // echo' <script> alert(updated Successfully)</script>';
+  echo' <script> alert("updated Successfully")</script>';
+  header('location:customer_profile.php');
 
 }
 
@@ -140,14 +141,14 @@ if(isset($_POST['submit']))
                                 <span style="color: red;" id="sp2"></span>
                                                                                        
                           
-                                <input type="text"id="address" class="form-control mt-2" placeholder="Your Address*" value="<?php echo $row['Address'];?>>" name="address" onkeyup="clearmsg('sp4')"  style="width:350px;">
+                                <input type="text"id="address" class="form-control mt-2" placeholder="Your Address*" value="<?php echo $row['Address'];?>" name="address" onkeyup="clearmsg('sp4')"  style="width:350px;">
                                 <span style="color: red;" id="sp4"></span>
 
-                                <input type="text" id="contact" class="form-control mt-2" placeholder="Contact *" value="<?php echo $row['Contact'];?>>" name="contact"  onkeyup="clearmsg('sp3')"  style="width:350px;">
+                                <input type="text" id="contact" class="form-control mt-2" placeholder="Contact *" value="<?php echo $row['Contact'];?>" name="contact"  onkeyup="clearmsg('sp3')"  style="width:350px;">
                                 <span style="color: red;" id="sp3"></span>
                             
                             
-                                <input type="date"id="DOB" class="form-control mt-2" placeholder="Your Date of Birth" value="<?php echo $row['DOB'];?>> "name="dob"onkeyup="clearmsg('sp5')" style="width:350px;"> 
+                                <input type="date" id="DOB" class="form-control mt-2" placeholder="Your Date of Birth" value="<?php echo $row['DOB'];?>" name="dob"onkeyup="clearmsg('sp5')" style="width:350px;"> 
                                 <span style="color: red;" id="sp5"></span>                                                   
                                
                                 <!-- <button name="submit"type="submit" class="btn btn-primary" onclick="return validation();return false;">Edit</button> -->

@@ -75,11 +75,8 @@ else
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto active" href="customer_home.php">customerHome</a></li>
-          
-          <!-- <li><a class="nav-link scrollto" href="logout.php">logout</a></li> -->
           <li><a class="getstarted scrollto" href="logout.php">Logout</a></li>
-        
-        </ul>
+         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 

@@ -110,7 +110,9 @@ if(mysqli_num_rows($sql)>0)
           <div class="card-body">
             <h2 class="card-title text-center"style="color:black;">Notification</h2>
             <?php while ($row = mysqli_fetch_assoc($sql)) { ?>
-              <center><p class="card-text" style="color:red;"> <?php echo $row['Notification']; ?></p></center>
+              <center><p class="card-text" style="color:red;"> <?php echo $row['Notification']; ?></p>
+              <a class="btn btn-danger" href="delete.php?id=<?php echo $row['Notification_id']?>">delete</a>
+            </center>
             <?php } ?>
           </div>
         </div>

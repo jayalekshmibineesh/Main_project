@@ -51,21 +51,14 @@ $result=mysqli_query($con,$data);
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM </a></h1>
-     <center> <h3><span> Customer profile</span></h3></center>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="#"></a></li>
           <li><a class="nav-link scrollto" href="customerprofile_edit.php">Edit profile</a></li>
-          <!-- <li><a class="nav-link   scrollto" href="#portfolio">search</a></li> -->
           <li><a class="nav-link scrollto" href="customer_home.php">Customerhome</a></li>
           <li><a class="nav-link scrollto" href="login.php">Login</a></li>
-
           <li><a class="nav-link scrollto" href="customer__registration.php">Register</a></li> 
-          <!-- <li><a class="nav-link scrollto" href="#">Register</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -78,6 +71,7 @@ $result=mysqli_query($con,$data);
 <body>
   <!-- <section > -->
     <div  class ="container">
+    <center> <h3><span> Customer profile</span></h3></center>
       <center>
     <!-- <div class= "card" style="width:30%;background-color:pink;"> -->
     <form method=POST>

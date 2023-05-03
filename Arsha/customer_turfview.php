@@ -68,7 +68,6 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-
       <h1 class="logo me-auto"><a href="index.html">TURF MANAGEMENT SYSTEM</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -82,9 +81,11 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
-  </header><!-- End Header -->
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  </header><!-- End Header 
+  ======= Hero Section ======= -->
+  
+<main id="main">
+ <section>
   <div class="container">
   <div class="row">
     <?php while($row=mysqli_fetch_assoc($sql)) { ?>
@@ -103,35 +104,11 @@ $sql=mysqli_query($con,"SELECT * FROM  turf");
     </div>
     <?php } ?>
   </div>
-</div>
+</div>  
+ </main>
+  <!-- /End #main
 
-  </section><!-- End Hero -->
-
-  <!-- <main id="main">
-    <section>
-  <div class="container">
-  <div class="row">
-    <?php while($row=mysqli_fetch_assoc($sql)) { ?>
-    <div class="col-md-4">
-      <div class="card" style="margin-bottom: 20px;border-radius:40px;">
-        <img  src="./images/<?php echo $row['Image']; ?>" alt="image not found">
-       <center>
-        <div class="card-body">
-          <h5 class="card-title"><?php echo $row['Turf_name']; ?></h5>
-          <p class="card-text"><?php echo $row['Turf_place']; ?></p>
-          <p class="card-text">Amount: <?php echo $row['Amount']; ?></p>
-          <a href="bookturf.php?id=<?php echo $row['Turf_id']; ?>" class="btn btn-primary">Book Now</a>
-        </div>
-        </center>
-      </div>
-    </div>
-    <?php } ?>
-  </div>
-</div>
-    
-  </main>End #main -->
-
-  <!-- ======= Footer ======= -->
+  <======= Footer ======= -->
   <footer id="footer">
     <div class="container footer-bottom clearfix">
       <div class="copyright">

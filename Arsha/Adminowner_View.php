@@ -2,7 +2,7 @@
 <?php
 session_start();
 include 'connection.php';
-$data=mysqli_query($con,"select * from customer_registration");
+$data=mysqli_query($con,"select * from owner_registration");
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +46,9 @@ $data=mysqli_query($con,"select * from customer_registration");
                         color:white;
                       }
    
-        
+        th{
+            background-color:lightgreen;
+        }
 
             .btn1{
                 background-color:blue;
@@ -81,8 +83,7 @@ $data=mysqli_query($con,"select * from customer_registration");
           <li><a class="nav-lin scrollto" href="sent_notification.php">send notification</a></li>
           <li><a class="nav-link scrollto" href="admin_feedback.php">feedback</a></li>
           <li><a class="nav-link scrollto" href="view_turf.php">viewturf</a></li>
-          <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
-        </ul> 
+          <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>        </ul> 
         <i class="bi bi-list mobile-nav-toggle"></i> 
                
       </nav><!-- .navbar -->
@@ -94,58 +95,40 @@ $data=mysqli_query($con,"select * from customer_registration");
   <!-- ======= Hero Section ======= -->
 <section>
 <div class="nova">
-<h2><center><span>CUSTOMERS VIEW</span></center></h2><br> 
+<h2><center><span>OWNERS VIEW</span></center></h2><br> 
   <center>
-  <table>
-        <tr>
-            <th>CustomerName</th>
+  <table  class="table table-bordered"style="padding-bottom:250px; width:50%;">
+          <tr>
+            <th>OwnerName</th>
             <th>Email</th>
             <th>Address</th>
             <th>Contact</th>
-            <th>DOB</th>
             <th>Image</th>
-            <th >aprooval</th>
-        </tr>
-        <?php
-          while($row= mysqli_fetch_assoc($data))
-          {
-        ?>
-         <tr>
-          <td><?php echo $row['Customer_name'];?></td>
-          <td><?php echo $row['Email'] ;?></td>
-          <td><?php echo $row['Address'];?></td>
-          <td><?php echo $row['Contact'] ;?></td> 
-          <td><?php echo $row ['DOB'];?></td>
-          <td><img src="./images/<?php echo $row['image'];?>" height="50" width="50" alt="image not found"></td>
-        <td>
-          <?php
-          if($row['approval_status']==0)
-          {
-          ?>        
-         <a class="btn btn-primary" href="updatecust_status.php?id=<?php echo $row['Customer_id'];?>">approve</a>
-           <?php
-             }
-               elseif($row['approval_status']==1)
-                {
-            ?>
-          <button class="btn btn-danger">approved</button>  
-          <?php
-           }
-          ?>
-      </td>
-
-    </tr>
-         
-      <?php
-       }
-       ?>
-    </table></center>
+            <th>Approval</th>  
+          </tr>
+          <?php while($row = mysqli_fetch_assoc($data)) { ?>
+          <tr>
+            <td><?php echo $row['Owner_name']; ?></td>
+            <td><?php echo $row['Email']; ?></td>
+            <td><?php echo $row['Address']; ?></td>
+            <td><?php echo $row['Contact']; ?></td>
+            <td><img src="./images/<?php echo $row['Image']; ?>" alt="image not found" height="40" width="40"></td>
+            <td>
+              <?php if($row['approval_status'] == 0) { ?>
+              <a class="btn btn-primary" href="updateown_status.php?id=<?php echo $row['Owner_id']; ?>">approve</a>
+              <?php } elseif($row['approval_status'] == 1) { ?>
+              <button class="btn btn-danger">approved</button>  
+              <?php } ?>
+            </td>
+          </tr>
+          <?php } ?>
+        </table>
+ </center>
   </div>
   </section>
   <!-- End Hero -->
   <footer id="footer">
-   
-    <div class="container footer-bottom clearfix">
+       <div class="container footer-bottom clearfix">
       <div class="copyright">
         &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
       </div>

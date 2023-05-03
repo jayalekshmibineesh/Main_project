@@ -27,9 +27,14 @@ INNER JOIN payment on bookturf.Payment_id=payment.Payment_id WHERE Owner_id='$id
   <meta content="" name="description">
   <meta content="" name="keywords">
 <style>
+  table,tr,th,td
+  { border: 2px solid black;
+    border-collapse:collapse;
+    background-color:red; 
+  }
     td,th
     {
-        color:white;    
+        color:black;    
 
     }
    
@@ -90,7 +95,7 @@ INNER JOIN payment on bookturf.Payment_id=payment.Payment_id WHERE Owner_id='$id
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
          
           <h2>Owner turf booking details view </h2>
-         <center><table  class="table table-bordered">
+         <center><table class="table table-bordered">
                     <tr>
                        <th> Booking_id</th>
                        <th>Turf_Name</th>

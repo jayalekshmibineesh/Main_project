@@ -125,8 +125,7 @@ echo "invalid id or password";
 
       <nav id="navbar" class="navbar">
         <ul>
-          
-          <li><a class="getstarted scrollto" href="index.php">home</a></li>
+           <li><a class="getstarted scrollto" href="index.php">home</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -145,15 +144,8 @@ echo "invalid id or password";
             <form action="" method="POST">
 
             <h3 class="mb-5">Sign in</h3>
-            <div class="form-outline mt-2 mb-2" >
-              <select name="type" id="button">
-                <option value="owner">&nbsp;Owner</option>
-                <option value="customer">&nbsp; customer</option>
-                <option value="admin"> &nbsp;admin</option>
-
-              </select>
-              </div>
-
+            
+            
             <div class="form-outline mb-4">
               <input type="email"name="username"id="email" placeholder="Enter your username" class="form-control form-control-lg"onkeyup="clearmsg('sp1')" style="width:350px;">
               <span style="color: red;" id="sp1"></span>

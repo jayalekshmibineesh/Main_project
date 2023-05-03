@@ -86,23 +86,22 @@ mysqli_query($con,"UPDATE owner_registration SET `Owner_name`='$owner_name',`Add
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-        <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left">
-        <div class="row">
-          <div class="col-mb-4">
+          <div class="container" data-aos="fade-up" style="background-color:grey; width:450px; margin-left:300px;float:left">
+            <div class="row">
+              <div class="col-mb-4">
           <h4><center><span>OWNERS PROFILE UPDATE</span></center></h4><br>
-            <form  action="" method="POST" enctype="multipart/form-data" required>            
+                  <form  action="" method="POST" enctype="multipart/form-data" required>            
                             <div class="form-group">
-                            <input  type="file" id="imge"name="f1" class="form-control mt-2 mb-2"placeholer="Upload your profilepic">
+                               <input  type="file" id="imge"name="f1" class="form-control mt-2 mb-2"placeholer="Upload your profilepic">
 
                                 <input type="text" id="c_name"class="form-control mt-2" placeholder="Your Name *" value="<?php echo $row['Owner_name'];?>" name="owner_name" onkeyup="clearmsg('sp1')" style="width:350px;">
                                 <span style="color: red;" id="sp1"></span>
                                                            
                                 <input type="text"id="email" class="form-control mt-2" placeholder="Email *" value="<?php echo $row['Email'];?>" name="email" onkeyup="clearmsg('sp2')"  style="width:350px;"> 
-                                <span style="color: red;" id="sp2"></span>
+                                 <span style="color: red;" id="sp2"></span>
                                                         
                                 <input type="text" id="contact" class="form-control mt-2" placeholder="Contact *" value="<?php echo $row['Contact'];?>" name="contact"  onkeyup="clearmsg('sp3')"  style="width:350px;">
                                 <span style="color: red;" id="sp3"></span>
@@ -113,9 +112,9 @@ mysqli_query($con,"UPDATE owner_registration SET `Owner_name`='$owner_name',`Add
                                <!-- <input type="submit" class="btn btn-primary" name="submit"  value="Submit">      -->
                                <button name="submit"type="submit" class="btn btn-primary" onclick="return validation();return false;">update</button>
                             </form>
-                        </div>
+                         </div>
                        </div>
-                      </div>           
+                    </div>           
           </section><!-- End Hero -->
                            
   <!-- Vendor JS Files -->
@@ -137,18 +136,14 @@ mysqli_query($con,"UPDATE owner_registration SET `Owner_name`='$owner_name',`Add
         var email=document.getElementById("email").value;
         var contact=document.getElementById("contact").value;
         var address=document.getElementById("address").value;
-        
-
-        
-
+    
         if (c_name=="")
       {
         document.getElementById("sp1").innerHTML="Enter your Name";
         return false;
       }
       
-      
-      
+            
       if (email=="")
       {
         document.getElementById("sp2").innerHTML="Enter your email";
@@ -170,24 +165,17 @@ mysqli_query($con,"UPDATE owner_registration SET `Owner_name`='$owner_name',`Add
       }
        
       function clearmsg(sp)
+       {  
+         document.getElementById(sp).innerHTML="";
+        }
 
-{  
-document.getElementById(sp).innerHTML="";
-}
-
-
-</script> 
-
-         
-          </div>
-        </div>
-        
-         
-        </div>
-      </div>
+     </script>       
     </div>
-
-  </section><!-- End Hero -->
+   </div>        
+  </div>
+ </div>
+</div>
+</section><!-- End Hero -->
 
   
   <!-- ======= Footer ======= -->
@@ -197,8 +185,7 @@ document.getElementById(sp).innerHTML="";
         &copy; Copyright <strong><span>Futura</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        ootstrap-html-template-corporate/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->

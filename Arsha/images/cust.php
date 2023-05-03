@@ -66,3 +66,53 @@
     }
 
 </script>  -->
+<section>
+<div class="nova">
+<h2><center><span>CUSTOMERS VIEW</span></center></h2><br> 
+  <center>
+  <table>
+        <tr>
+            <th>CustomerName</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>DOB</th>
+            <th>Image</th>
+            <th >aprooval</th>
+        </tr>
+        <?php
+          while($row= mysqli_fetch_assoc($data))
+          {
+        ?>
+         <tr>
+          <td><?php echo $row['Customer_name'];?></td>
+          <td><?php echo $row['Email'] ;?></td>
+          <td><?php echo $row['Address'];?></td>
+          <td><?php echo $row['Contact'] ;?></td> 
+          <td><?php echo $row ['DOB'];?></td>
+          <td><img src="./images/<?php echo $row['image'];?>" height="50" width="50" alt="image not found"></td>
+        <td>
+          <?php
+          if($row['approval_status']==0)
+          {
+          ?>        
+         <a class="btn btn-primary" href="updatecust_status.php?id=<?php echo $row['Customer_id'];?>">approve</a>
+           <?php
+             }
+               elseif($row['approval_status']==1)
+                {
+            ?>
+          <button class="btn btn-danger">approved</button>  
+          <?php
+           }
+          ?>
+      </td>
+
+    </tr>
+         
+      <?php
+       }
+       ?>
+    </table></center>
+  </div>
+  </section>

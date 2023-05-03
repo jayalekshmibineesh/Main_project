@@ -43,12 +43,12 @@ include 'connection.php';
         <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="Adminview_owners.php">ownersview</a></li>
+          <li><a class="nav-link scrollto" href="Adminowner_View.php">ownersview</a></li>
           <li><a class="nav-link scrollto" href="Adminview_customers.php">customerview</a></li>
           <li><a class="nav-link scrollto" href="changepassword.php">Change password</a></li> 
           <li><a class="nav-lin scrollto" href="sent_notification.php">send notification</a></li>
           <li><a class="nav-link scrollto" href="admin_feedback.php">feedback</a></li>
-          <li><a class="nav-link scrollto" href="view_turf.php">viewturf</a></li>
+          <li><a class="nav-link scrollto" href=" Ownerturf_view.php">viewturf</a></li>
           <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
           
         </ul>
